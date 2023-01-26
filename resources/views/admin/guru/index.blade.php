@@ -8,7 +8,7 @@
     {{-- Error Page --}}
     @if ($errors->any())
         @php
-            toast('Data harus diisi semua!', 'error');
+            toast('Data tidak valid!', 'error');
         @endphp
     @endif
 
@@ -41,7 +41,7 @@
                         @foreach ($guru as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->nip }}</td>
+                                <td><span class="badge bg-warning">{{ $data->nip }}</span></td>
                                 <td>{{ $data->nama }}</td>
                                 <td>{{ $data->mata_pelajaran }}</td>
                                 <td>{{ $data->jenis_kelamin }}</td>

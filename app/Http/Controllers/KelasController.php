@@ -11,14 +11,14 @@ class KelasController extends Controller
     public function index()
     {
         $kelas = Kelas::latest()->get();
-    
+
         return view('admin.kelas.index', compact('kelas'));
     }
 
     public function create()
     {
         $kelas = Kelas::all();
-    
+
         return view('kelas.create', compact('kelas'));
     }
 
@@ -29,9 +29,9 @@ class KelasController extends Controller
             'kelas'   => 'required',
             'jurusan' => 'required',
         ]);
-        
+
         $kelas = new Kelas();
-        
+
         $kelas->kelas   = $request->kelas;
         $kelas->jurusan = $request->jurusan;
         $kelas->save();
@@ -47,7 +47,7 @@ class KelasController extends Controller
         return view('admin.kelas.show', compact('kelas'));
     }
 
-   
+
     public function edit($id)
     {
         $kelas = Kelas::findOrFail($id);
@@ -69,20 +69,23 @@ class KelasController extends Controller
         $kelas->kelas   = $request->kelas;
         $kelas->jurusan = $request->jurusan;
         $kelas->save();
-        
+
         return redirect()->route('kelas.index')
             ->with('success', 'Data Berhasil Diedit!');
     }
 
     public function destroy($id)
     {
-        $kelas = Kelas::findOrFail($id);
-        
-        $kelas->delete();
+        if(!Kelas::destroy($id)) {
+            return redirect()->back();
+        }
+
+        // $kelas = Kelas::findOrFail($id);
+
+        // $kelas->delete();
 
         return redirect()->route('kelas.index')
             ->with('success', 'Data Berhasil Dihapus!');
     }
 }
-// composer require realrashid/sweet-alert
-    
+

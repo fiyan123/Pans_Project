@@ -9,7 +9,7 @@
     {{-- Error Page --}}
     @if ($errors->any())
         @php
-            toast('Data harus diisi semua!', 'error');
+            toast('Data tidak valid!', 'error');
         @endphp
     @endif
 
@@ -27,7 +27,7 @@
                         <dt class="the-icon"><span class="fa-fw select-all fas"></span> Tambah Data</dt>
                     </button>
                 </div>
-                <table class="table table-striped-bordered" id="table1">
+                <table class="table table-striped-bordered" id="dataTable">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -43,7 +43,7 @@
                         @foreach ($siswa as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->nis }}</td>
+                                <td><span class="badge bg-warning">{{ $data->nis }}</span></td>
                                 <td>{{ $data->nama }}</td>
                                 <td>{{ $data->kelas->kelas }}</td>
                                 <td>{{ $data->kelas->jurusan }}</td>

@@ -15,8 +15,8 @@
         <div class="card">
             <div class="card-body">
                 <div class="mb-3">
-                    <label class="form-label">Nip Guru</label>
-                    <input type="number" class="form-control" name="id_guru" value="{{ $nilai->guru->nip }}" readonly>
+                    <label class="form-label">Nama Guru</label>
+                    <input type="text" class="form-control" name="id_guru" value="{{ $nilai->guru->nama }}" readonly>
                 </div>
 
                 <div class="mb-3">
@@ -76,5 +76,4 @@
             </div>
         </div>
     </div>
-   
 @endsection

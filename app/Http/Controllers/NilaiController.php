@@ -19,7 +19,7 @@ class NilaiController extends Controller
         $kelas = Kelas::all();
         $guru  = Guru::all();
         $siswa = Siswa::all();
-        
+
         return view('GuruUser.nilai.index', compact('nilai', 'kelas', 'guru', 'siswa'));
     }
 
@@ -29,7 +29,7 @@ class NilaiController extends Controller
         $siswa = Siswa::all();
         $kelas = Kelas::all();
         $guru  = Guru::all();
-   
+
         return view('nilai.create', compact('kelas', 'siswa', 'guru', 'nilai'));
     }
 
@@ -55,7 +55,7 @@ class NilaiController extends Controller
         $nilai->pas             = $request->pas;
         $nilai->pat             = $request->pat;
         $nilai->raport          = ($request->nilai_kehadiran + $request->nilai_harian + $request->pas + $request->pat) / 4;
-        
+
         if ($nilai->raport >= 90 && $nilai->raport <= 100) {
             $grade = "A";
         } elseif ($nilai->raport >= 80 && $nilai->raport <= 89) {
@@ -77,7 +77,7 @@ class NilaiController extends Controller
     public function show($id)
     {
         $nilai = Nilai::findOrFail($id);
-        
+
         return view('GuruUser.nilai.show', compact('nilai'));
 
     }
@@ -130,9 +130,9 @@ class NilaiController extends Controller
             $grade = "E";
         }
         $nilai->nilai_grade = $grade;
-        
+
         $nilai->save();
-        
+
         return redirect()->route('nilai.index')->with('success', 'Data berhasil diedit!');
 
     }
@@ -140,13 +140,13 @@ class NilaiController extends Controller
     public function destroy($id)
     {
         $nilai = Nilai::findOrFail($id);
-        
+
         $nilai->delete();
         return redirect()->route('nilai.index')->with('success', 'Data berhasil dihapus!');
 
     }
 
-    public function downloadExcel() 
+    public function downloadExcel()
     {
         return Excel::download(new NilaiExport, 'DataNilai.xlsx');
     }

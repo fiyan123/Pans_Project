@@ -8,7 +8,7 @@
     {{-- Error Page --}}
     @if ($errors->any())
         @php
-            toast('Data harus diisi semua!', 'error');
+            toast('Data tidak valid!', 'error');
         @endphp
     @endif
 

@@ -12,7 +12,7 @@
         </div>
         <div class="card">
             <div class="card-body table-responsive">
-                <table id="dataTable" class="table table">
+                <table id="dataTable" class="table table-striped">
                     <thead>
                         <tr>
                             <th>No</th>

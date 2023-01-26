@@ -22,7 +22,8 @@
                 </div>
             @else
                 <a href="{{ url('/login') }}" class="nav-item nav-link" data-bs-toggle="tooltip" data-bs-placement="top"
-                    title="Masuk"><i class="bi bi-door-open-fill"></i></a>
+                    title="Masuk"><dt class="the-icon"><span class="fa-fw select-all-fill fas"></span></dt>
+                </a>
             @endauth
         </div>
     </div>

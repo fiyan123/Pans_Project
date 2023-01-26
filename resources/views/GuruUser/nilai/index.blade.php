@@ -27,11 +27,11 @@
                         <dt class="the-icon"><span class="fa-fw select-all fas"></span> Tambah Data</dt>
                     </button>
                 </div>
-                <table class="table table-bordered-striped text-nowrap" id="table1">
+                <table class="table table-bordered-striped" id="table1">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nip Guru</th>
+                            <th>Nama Guru</th>
                             <th>Nisn</th>
                             <th>Nama</th>
                             <th>Kelas</th>
@@ -45,8 +45,8 @@
                         @foreach ($nilai as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->guru->nip }}</td>
-                                <td>{{ $data->siswa->nis }}</td>
+                                <td>{{ $data->guru->nama }}</td>
+                                <td><span class="badge bg-primary">{{ $data->siswa->nis }}</span></td>
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ $data->kelas->kelas }}</td>
                                 <td>{{ $data->kelas->jurusan }}</td>
@@ -77,14 +77,16 @@
                         @endforeach
                     </tbody>
                 </table>
+
                 <a href="/downloadExcel" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Download Excel">
                     <dt class="the-icon"><span class="fa-fw select-all fas"></span> Download</dt>
                 </a>
+
             </div>
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Create Modal -->
     <div class="modal fade" id="nilaiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered"  data-bs-backdrop="false">
             <div class="modal-content">
@@ -95,11 +97,11 @@
                     <form action="{{ route('nilai.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">Nip Guru</label>
+                            <label class="form-label">Nama Guru</label>
                             <select name="id_guru" class="form-control @error('id_guru') is-invalid @enderror" id="id_guru">
-                                <option aria-disabled="true" hidden>pilih nip guru</option>
+                                <option aria-disabled="true" hidden>pilih nama guru</option>
                                 @foreach ($guru as $data)
-                                    <option value="{{ $data->id }}">{{ $data->nip }}</option>
+                                    <option value="{{ $data->id }}">{{ $data->nama }}</option>
                                 @endforeach
                             </select>
                             @error('id_guru')
@@ -109,7 +111,7 @@
                             @enderror
                         </div>
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">Nisn Siswa</label>
                             <select name="id_siswa" class="form-control @error('id_siswa') is-invalid @enderror" id="">
                                 <option aria-disabled="true" hidden>pilih nisn siswa</option>
@@ -122,8 +124,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
-
+                        </div> --}}
 
                         <div class="mb-3">
                             <label class="form-label">Nama Siswa</label>
@@ -155,10 +156,9 @@
                             @enderror
                         </div>
 
-                        <br>
-                        <div align="left" class="mb-5">
-                            <h4 class="modal-title" id="exampleModalLabel" style="color: black">Data Nilai Siswa</h4>
-                        </div>
+                        {{-- <div class="mb-3">
+                            <h5 class="modal-title" id="exampleModalLabel" style="color: black">Data Nilai Siswa</h5>
+                        </div> --}}
 
                         <div class="mb-3">
                             <label class="form-label">Nilai Kehadiran</label>

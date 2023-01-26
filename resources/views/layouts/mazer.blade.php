@@ -19,9 +19,8 @@
     <link rel="stylesheet" href="{{ asset('assetsm/vendors/simple-datatables/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsm/vendors/apexcharts/apexcharts.css') }}">
     <link rel="stylesheet" href="{{ asset('assetsm/vendors/fontawesome/all.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('assetsm/fakeLoader/css/fakeLoader.css') }}"> --}}
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
     <link rel="stylesheet" href="{{ asset('assetsm/css/shared/iconly.css') }}">
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
     <style>
         label {
             color: black;
@@ -43,7 +42,6 @@
 </head>
 
 <body>
-    {{-- <div class="fakeLoader"></div> --}}
     <div id="app">
         <div id="sidebar" class="active">
             @include('layouts.componentsm.sidebar')
@@ -67,12 +65,12 @@
     <script src="{{ asset('assetsm/vendors/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('assetsm/vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ asset('assetsm/js/pages/ui-apexchart.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <script src="{{ asset('assetsm/vendors/fontawesome/all.min.js') }}"></script>
     <script src="{{ asset('assetsm/extensions/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('assetsm/js/pages/dashboard.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <script>
         // Simple Datatable
@@ -99,17 +97,6 @@
             font-size: 24px;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    {{-- <script src="{{ asset('assetsm/fakeLoader/js/fakeLoader.js') }}"></script> --}}
-    {{-- <script>
-        $(document).ready(function() {
-            $.fakeLoader({
-                timeToHide: 1200,
-                bgColor: "#ffffff",
-                spinner: "spinner1"
-            });
-        });
-    </script> --}}
     <script>
         // Spinner
         var spinner = function() {

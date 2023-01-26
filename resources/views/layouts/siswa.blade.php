@@ -44,18 +44,17 @@
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-
         <img src="{{ asset('assetsm/vendors/svg-loaders/audio.svg') }}" class="me-4" style="width: 5rem"
             alt="audio">
     </div>
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    @include('layouts.components_siswa.navbar')
+        @include('layouts.components_siswa.navbar')
     <!-- Navbar End -->
 
     <!-- Carousel Start -->
-    @include('layouts.components_siswa.carousel')
+        @include('layouts.components_siswa.carousel')
     <!-- Carousel End -->
 
     <!-- Categories Start -->
@@ -67,114 +66,19 @@
     <!-- Categories Start -->
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Data Kemampuan</h6>
-                <h1 class="mb-5">Kegiatan Lain Yang Bisa Dilakukan</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Kemampuan Struktur</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Kelas Online</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-folder-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Tugas Kelompok</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-book text-primary mb-4"></i>
-                            <h5 class="mb-3">Membaca Buku</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @include('layouts.components_siswa.service')
     <!-- Service End -->
-
 
     {{-- About --}}
         @include('layouts.components_siswa.about')
     {{-- End About --}}
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Pelajar Alumni</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3"
-                        src="{{ asset('assets0/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Pelajar Nama</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3"
-                        src="{{ asset('assets0/img/testimonial-2.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Pelajar Nama</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3"
-                        src="{{ asset('assets0/img/testimonial-3.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Pelajar Nama</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3"
-                        src="{{ asset('assets0/img/testimonial-4.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Pelajar Nama</h5>
-                    <p>Profession</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                            eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @include('layouts.components_siswa.testimonial')
     <!-- Testimonial End -->
 
     <!-- Footer Start -->
-    @include('layouts.components_siswa.footer')
+        @include('layouts.components_siswa.footer')
     <!-- Footer End -->
 
 

@@ -18,12 +18,12 @@
                     @csrf
                     @method('put')
                     <div class="mb-3">
-                        <label class="form-label">Pilih Nip Guru</label>
+                        <label class="form-label">Pilih Nama Guru</label>
                         <select name="id_guru" class="form-control @error('id_guru') is-invalid @enderror">
                             @foreach ($guru as $data)
                                 <option value="{{ $data->id }}"
                                     {{ $data->id == $nilai->id_guru ? 'selected' : '' }}>
-                                    {{ $data->nip }}
+                                    {{ $data->nama }}
                                 </option>
                             @endforeach
                         </select>
@@ -34,7 +34,7 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="form-label">Pilih Nisn Siswa</label>
                         <select name="id_siswa" class="form-control @error('id_siswa') is-invalid @enderror">
                             @foreach ($siswa as $data)
@@ -49,7 +49,7 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    </div>
+                    </div> --}}
 
                     <div class="mb-3">
                         <label class="form-label">Pilih Nama Siswa</label>
@@ -85,7 +85,7 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label class="form-label">Pilih Data Jurusan</label>
                         <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror">
                             @foreach ($kelas as $data)
@@ -100,8 +100,7 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    </div>
-
+                    </div> --}}
 
                     <div class="mb-3">
                         <label class="form-label">Nilai Kehadiran</label>

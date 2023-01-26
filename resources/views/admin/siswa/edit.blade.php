@@ -9,7 +9,7 @@
             <img src="{{ asset('assetsm/vendors/svg-loaders/audio.svg') }}" class="me-4" style="width: 5rem" alt="audio">
         </div>
     </div>
-    
+
     <div class="col-md-12">
         <div class="page-heading">
             <h3>Data Dari Siswa {{ $siswa->nama }}</h3>
@@ -56,23 +56,6 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Pilih Data Jurusan</label>
-                        <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror">
-                            @foreach ($kelas as $data)
-                                <option value="{{ $data->id }}"
-                                    {{ $data->id == $siswa->id_kelas ? 'selected' : '' }}>
-                                    {{ $data->jurusan }}
-                                </option>
-                            @endforeach
-                        </select>
-                        @error('id_kelas')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
                         <label class="form-label">Jenis Kelamin</label>
                         <div class="form-check">
                             <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin" value="Laki-laki"
@@ -104,5 +87,5 @@
             </div>
         </div>
     </div>
-       
+
 @endsection
