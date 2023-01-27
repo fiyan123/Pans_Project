@@ -1,49 +1,47 @@
-@extends('layouts.admin')
+<!-- Modal Create Data -->
+<div class="modal fade" id="kelasModal" tabindex="-1" aria-labelledby="kelasModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="color: black">Tambah Data Baru</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                @include('layouts/_flash')
-                <div class="card">
-                    <div class="card-header" align="center">
-                        Data kelas
+            <div class="modal-body">
+                <form action="{{ route('kelas.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="form-label">Kelas</label>
+                        <input type="text" class="form-control  @error('kelas') is-invalid @enderror" name="kelas"
+                            id="kelas" value="{{ old('kelas') }}" placeholder="kelas">
+                        @error('kelas')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                    <div class="card-body">
-                        <form action="{{ route('kelas.store') }}" method="post">
-                            @csrf
-                            <div class="mb-3">
-                                <label class="form-label">Kelas</label>
-                                <input type="text" class="form-control  @error('kelas') is-invalid @enderror"
-                                    name="kelas">
-                                @error('kelas')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Jurusan</label>
-                                <input type="text" class="form-control  @error('jurusan') is-invalid @enderror"
-                                    name="jurusan">
-                                @error('jurusan')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            
-                            <div class="mb-3">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit">Simpan</button>
-                                    <a href="{{ route('kelas.index') }}" class="btn btn-secondary">Kembali</a>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="mb-3">
+                        <label class="form-label">Jurusan</label>
+                        <input type="text" class="form-control  @error('jurusan') is-invalid @enderror"
+                            name="jurusan" id="jurusan" value="{{ old('jurusan') }}" placeholder="jurusan">
+                        @error('jurusan')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
-            </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-warning" id="btnReset" data-bs-toggle="tooltip" data-bs-placement="top">
+                        <dt class="the-icon"><span class="fa-fw select-all fas"></span> Reset</dt>
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="btnSimpan" data-bs-toggle="tooltip" data-bs-placement="top" disabled>
+                        <dt class="the-icon"><span class="fa-fw select-all fas"></span> Simpan</dt>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
-@endsection
+</div>
+

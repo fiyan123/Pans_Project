@@ -19,7 +19,6 @@ class Siswa extends Model
         return $this->belongsTo(Kelas::class, 'id_kelas');
     }
 
-
     public function scopeFilter($query, $filters)
     {
         $query->when($filters['search'] ?? false, function($query, $search) {

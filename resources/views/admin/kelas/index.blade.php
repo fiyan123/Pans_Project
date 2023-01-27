@@ -55,11 +55,33 @@
                                             data-bs-placement="top" title="Detail Data">
                                             <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
                                         </a> |
-                                        <button type="submit" class="btn btn-outline-danger btn-icon-text"
-                                            onclick="return confirm('Hapus Data Ini?')" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Hapus Data">
+                                        <button type="button"  class="btn btn-outline-danger btn-icon-text" data-bs-toggle="modal"
+                                            data-bs-target="#modalCenter">
                                             <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
                                         </button>
+
+                                        {{-- Modal Delete --}}
+                                        <div class="modal fade" id="modalCenter" tabindex="-1"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalCenterTitle">Apakah Anda
+                                                            Yakin?
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">
+                                                            Kembali
+                                                        </button>
+                                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </form>
                                 </td>
                             </tr>
@@ -70,53 +92,7 @@
         </div>
     </section>
 
-
-    <!-- Modal Create Data -->
-    <div class="modal fade" id="kelasModal" tabindex="-1" aria-labelledby="kelasModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel" style="color: black">Tambah Data Baru</h5>
-                </div>
-
-                <div class="modal-body">
-                    <form action="{{ route('kelas.store') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label class="form-label">Kelas</label>
-                            <input type="text" class="form-control  @error('kelas') is-invalid @enderror" name="kelas"
-                                id="kelas" value="{{ old('kelas') }}" placeholder="kelas">
-                            @error('kelas')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Jurusan</label>
-                            <input type="text" class="form-control  @error('jurusan') is-invalid @enderror"
-                                name="jurusan" id="jurusan" value="{{ old('jurusan') }}" placeholder="jurusan">
-                            @error('jurusan')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="reset" class="btn btn-warning" id="btnReset" data-bs-toggle="tooltip" data-bs-placement="top">
-                            <dt class="the-icon"><span class="fa-fw select-all fas"></span> Reset</dt>
-                        </button>
-                        <button type="submit" class="btn btn-primary" id="btnSimpan" data-bs-toggle="tooltip" data-bs-placement="top" disabled>
-                            <dt class="the-icon"><span class="fa-fw select-all fas"></span> Simpan</dt>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    @include('admin.kelas.create')
 
     {{-- Script Button --}}
     <script>
