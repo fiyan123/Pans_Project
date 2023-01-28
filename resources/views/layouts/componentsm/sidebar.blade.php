@@ -69,11 +69,19 @@
 
             <li class="sidebar-title">Aktifitas</li>
                 <li class="sidebar-item  ">
-                    <!-- Button trigger modal -->
+                    {{-- <!-- Button trigger modal -->
                     <a class="sidebar-link" data-bs-toggle="modal" data-bs-target="#logoutModal">
                         <dt class="the-icon"><span class="fa-fw select-all-fill fas"></span></dt>
                         <span>Keluar</span>
-                    </a>
+                    </a> --}}
+
+                    <form id="logOut" action="/logout" method="POST">
+                        @csrf
+                        <a class="sidebar-link" id="logOut">
+                            <dt class="the-icon"><span class="fa-fw select-all-fill fas"></span></dt>
+                            <span>Keluar</span>
+                        </a>
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -96,3 +104,24 @@
         </div>
     </div>
 </div>
+
+
+{{-- Script Logout --}}
+<script>
+    const logOut = document.getElementById('logOut');
+    logOut.addEventListener('click', function() {
+    Swal.fire({
+    title: 'Apa Anda Yakin?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#7066e0',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Keluar'
+    }).then((result) => {
+    if (result.isConfirmed) {
+        $('#logOut').submit()
+        }
+    });
+});
+</script>
+

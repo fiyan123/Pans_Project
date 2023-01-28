@@ -26,7 +26,7 @@ class KelasController extends Controller
     {
         //validasi
         $validated = $request->validate([
-            'kelas'   => 'required',
+            'kelas'   => 'required|unique:kelas',
             'jurusan' => 'required',
         ]);
 
@@ -79,10 +79,6 @@ class KelasController extends Controller
         if(!Kelas::destroy($id)) {
             return redirect()->back();
         }
-
-        // $kelas = Kelas::findOrFail($id);
-
-        // $kelas->delete();
 
         return redirect()->route('kelas.index')
             ->with('success', 'Data Berhasil Dihapus!');

@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="reset" class="btn btn-warning" id="btnReset" data-bs-toggle="tooltip" data-bs-placement="top">
+                    <button type="reset" class="btn btn-light-secondary" id="btnReset" data-bs-toggle="tooltip" data-bs-placement="top">
                         <dt class="the-icon"><span class="fa-fw select-all fas"></span> Reset</dt>
                     </button>
                     <button type="submit" class="btn btn-primary" id="btnSimpan" data-bs-toggle="tooltip" data-bs-placement="top" disabled>

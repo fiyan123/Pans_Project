@@ -11,8 +11,7 @@
                 <h5 class="mb-0">Pelajar Nama</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">"Setiap perjuangan pasti ada hasilnya. Gagal memberi pelajaran, sukses memberi kebahagiaan."</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -21,8 +20,7 @@
                 <h5 class="mb-0">Pelajar Nama</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0"> "Jika seseorang mencari ilmu, maka itu akan tampak di wajah, tangan, dan lidahnya, serta kerendahan hatinya kepada Allah." - Hasan Al-Bashri</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -31,8 +29,7 @@
                 <h5 class="mb-0">Pelajar Nama</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">"Setiap orang menjadi guru, setiap rumah menjadi sekolah." - Ki Hadjar Dewantara</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -41,8 +38,7 @@
                 <h5 class="mb-0">Pelajar Nama</h5>
                 <p>Profession</p>
                 <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0"> "Belajar memang melelahkan, namun akan lebih melelahkan lagi jika saat ini kamu tidak belajar."</p>
                 </div>
             </div>
         </div>

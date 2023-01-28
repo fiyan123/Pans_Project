@@ -33,5 +33,3 @@ Route::group(['prefix'=>'admin','middleware'=>['admin']], function() {
 
 // Export Excel
 Route::get('/downloadExcel', [NilaiController::class, 'downloadExcel'])->name('downloadExcel');
-
-Route::get('/malasngoding','MalasngodingController@index');
