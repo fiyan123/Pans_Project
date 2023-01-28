@@ -36,7 +36,7 @@
                             <th>Nama</th>
                             <th>Kelas</th>
                             <th>Jurusan</th>
-                            <th>Nilai Raport</th>
+                            <th>Nilai Akhir To</th>
                             <th>Grade</th>
                             <th>Aksi</th>
                         </tr>
@@ -50,7 +50,7 @@
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ $data->kelas->kelas }}</td>
                                 <td>{{ $data->kelas->jurusan }}</td>
-                                <td>{{ $data->raport }}</td>
+                                <td>{{ $data->nilai_akhir }}</td>
                                 <td>{{ $data->nilai_grade }}</td>
                                 <td>
                                     <form action="{{ route('nilai.destroy', $data->id) }}" method="POST" class="d-inline">

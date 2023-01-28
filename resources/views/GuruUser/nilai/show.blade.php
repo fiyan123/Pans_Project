@@ -40,28 +40,28 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Kehadiran</label>
-                    <input type="number" class="form-control" name="nilai_kehadiran" value="{{ $nilai->nilai_kehadiran }}" readonly>
+                    <label class="form-label">Try Out 1</label>
+                    <input type="number" class="form-control" name="to1" value="{{ $nilai->to1 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Harian</label>
-                    <input type="number" class="form-control" name="nilai_harian" value="{{ $nilai->nilai_harian }}" readonly>
+                    <label class="form-label">Try Out 2</label>
+                    <input type="number" class="form-control" name="to2" value="{{ $nilai->to2 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Pas</label>
-                    <input type="number" class="form-control" name="pas" value="{{ $nilai->pas }}" readonly>
+                    <label class="form-label">Try Out 3</label>
+                    <input type="number" class="form-control" name="to3" value="{{ $nilai->to3 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Pat</label>
-                    <input type="number" class="form-control" name="pat" value="{{ $nilai->pat }}" readonly>
+                    <label class="form-label">Try Out 4</label>
+                    <input type="number" class="form-control" name="to4" value="{{ $nilai->to4 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Raport</label>
-                    <input type="number" class="form-control" name="raport" value="{{ $nilai->raport }}" readonly>
+                    <label class="form-label">Nilai Akhir To</label>
+                    <input type="number" class="form-control" name="nilai_akhir" value="{{ $nilai->nilai_akhir }}" readonly>
                 </div>
 
                 <div class="mb-3">

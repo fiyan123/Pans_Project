@@ -103,10 +103,10 @@
                     </div> --}}
 
                     <div class="mb-3">
-                        <label class="form-label">Nilai Kehadiran</label>
-                        <input type="number" class="form-control  @error('nilai_kehadiran') is-invalid @enderror"
-                            name="nilai_kehadiran" value="{{ $nilai->nilai_kehadiran }}">
-                        @error('nilai_kehadiran')
+                        <label class="form-label">Try Out 1</label>
+                        <input type="number" class="form-control  @error('to1') is-invalid @enderror"
+                            name="to1" value="{{ $nilai->to1 }}">
+                        @error('to1')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -114,10 +114,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Nilai Harian</label>
-                        <input type="number" class="form-control  @error('nilai_harian') is-invalid @enderror"
-                            name="nilai_harian" value="{{ $nilai->nilai_harian }}">
-                        @error('nilai_harian')
+                        <label class="form-label">Try Out 2</label>
+                        <input type="number" class="form-control  @error('to2') is-invalid @enderror"
+                            name="to2" value="{{ $nilai->to2 }}">
+                        @error('to2')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -125,10 +125,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Nilai Pas</label>
-                        <input type="number" class="form-control  @error('pas') is-invalid @enderror"
-                            name="pas" value="{{ $nilai->pas }}">
-                        @error('pas')
+                        <label class="form-label">Try Out 3</label>
+                        <input type="number" class="form-control  @error('to3') is-invalid @enderror"
+                            name="to3" value="{{ $nilai->to3 }}">
+                        @error('to3')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -136,10 +136,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Nilai Pat</label>
-                        <input type="number" class="form-control  @error('pat') is-invalid @enderror"
-                            name="pat" value="{{ $nilai->pat }}">
-                        @error('pat')
+                        <label class="form-label">Try Out 4</label>
+                        <input type="number" class="form-control  @error('to4') is-invalid @enderror"
+                            name="to4" value="{{ $nilai->to4 }}">
+                        @error('to4')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

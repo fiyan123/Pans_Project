@@ -39,10 +39,10 @@ class NilaiController extends Controller
             'id_guru'         => 'required',
             'id_siswa'        => 'required',
             'id_kelas'        => 'required',
-            'nilai_kehadiran' => 'required',
-            'nilai_harian'    => 'required',
-            'pas'             => 'required',
-            'pat'             => 'required',
+            'to1'             => 'required',
+            'to2'             => 'required',
+            'to3'             => 'required',
+            'to4'             => 'required',
         ]);
 
         $nilai = new Nilai();
@@ -50,19 +50,19 @@ class NilaiController extends Controller
         $nilai->id_guru         = $request->id_guru;
         $nilai->id_siswa        = $request->id_siswa;
         $nilai->id_kelas        = $request->id_kelas;
-        $nilai->nilai_kehadiran = $request->nilai_kehadiran;
-        $nilai->nilai_harian    = $request->nilai_harian;
-        $nilai->pas             = $request->pas;
-        $nilai->pat             = $request->pat;
-        $nilai->raport          = ($request->nilai_kehadiran + $request->nilai_harian + $request->pas + $request->pat) / 4;
+        $nilai->to1             = $request->to1;
+        $nilai->to2             = $request->to2;
+        $nilai->to3             = $request->to3;
+        $nilai->to4             = $request->to4;
+        $nilai->nilai_akhir     = ($request->to1 + $request->to2 + $request->to3 + $request->to4) / 4;
 
-        if ($nilai->raport >= 90 && $nilai->raport <= 100) {
+        if ($nilai->nilai_akhir >= 90 && $nilai->nilai_akhir <= 100) {
             $grade = "A";
-        } elseif ($nilai->raport >= 80 && $nilai->raport <= 89) {
+        } elseif ($nilai->nilai_akhir >= 80 && $nilai->nilai_akhir <= 89) {
             $grade = "B";
-        } elseif ($nilai->raport >= 70 && $nilai->raport <= 79) {
+        } elseif ($nilai->nilai_akhir >= 70 && $nilai->nilai_akhir <= 79) {
             $grade = "C";
-        } elseif ($nilai->raport >= 60 && $nilai->raport <= 69) {
+        } elseif ($nilai->nilai_akhir >= 60 && $nilai->nilai_akhir <= 69) {
             $grade = "D";
         } else {
             $grade = "E";
@@ -99,10 +99,10 @@ class NilaiController extends Controller
             'id_guru'         => 'required',
             'id_siswa'        => 'required',
             'id_kelas'        => 'required',
-            'nilai_kehadiran' => 'required',
-            'nilai_harian'    => 'required',
-            'pas'             => 'required',
-            'pat'             => 'required',
+            'to1'             => 'required',
+            'to2'             => 'required',
+            'to3'             => 'required',
+            'to4'             => 'required',
 
         ]);
 
@@ -111,20 +111,20 @@ class NilaiController extends Controller
         $nilai->id_kelas        = $request->id_kelas;
         $nilai->id_siswa        = $request->id_siswa;
         $nilai->id_guru         = $request->id_guru;
-        $nilai->nilai_kehadiran = $request->nilai_kehadiran;
-        $nilai->nilai_harian    = $request->nilai_harian;
-        $nilai->pas             = $request->pas;
-        $nilai->pat             = $request->pat;
-        $raport                 = ($request->nilai_kehadiran + $request->nilai_harian + $request->pas + $request->pat) / 4;
-        $nilai->raport          = $raport;
+        $nilai->to1             = $request->to1;
+        $nilai->to2             = $request->to2;
+        $nilai->to3             = $request->to3;
+        $nilai->to4             = $request->to4;
+        $nilai_akhir            = ($request->to1 + $request->to2 + $request->to3 + $request->to4) / 4;
+        $nilai->nilai_akhir     = $nilai_akhir;
 
-        if ($nilai->raport >= 90 && $nilai->raport <= 100) {
+        if ($nilai->nilai_akhir >= 90 && $nilai->nilai_akhir <= 100) {
             $grade = "A";
-        } elseif ($nilai->raport >= 80 && $nilai->raport <= 89) {
+        } elseif ($nilai->nilai_akhir >= 80 && $nilai->nilai_akhir <= 89) {
             $grade = "B";
-        } elseif ($nilai->raport >= 70 && $nilai->raport <= 79) {
+        } elseif ($nilai->nilai_akhir >= 70 && $nilai->nilai_akhir <= 79) {
             $grade = "C";
-        } elseif ($nilai->raport >= 60 && $nilai->raport <= 69) {
+        } elseif ($nilai->nilai_akhir >= 60 && $nilai->nilai_akhir <= 69) {
             $grade = "D";
         } else {
             $grade = "E";

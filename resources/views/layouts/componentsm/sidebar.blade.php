@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-center">
             <div class="logo">
                 <a><img src="{{ asset('assetsm/images/logo/logo2.png') }}" alt="Logo" style="width: 200px; height:99px">
-                    <p class="h5 mt-3">Web Penilaian Siswa</p>
+                    <p class="h5 mt-3">Web Penilaian TO</p>
                 </a>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <li class="sidebar-item {{ Request::is('guru/nilai*') ? 'active' : '' }}">
                     <a href="{{ route('nilai.index') }}" class="sidebar-link">
                         <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                        <span>Penilaian Raport</span>
+                        <span>Penilaian TO</span>
                     </a>
                 </li>
             @endcan
