@@ -20,7 +20,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route Role Guru
-Route::group(['prefix' => 'guru', 'middleware' => ['guru']], function() {
+Route::group(['prefix' => 'walikelas', 'middleware' => ['guru']], function() {
     Route::resource('nilai', NilaiController::class);
 });
 

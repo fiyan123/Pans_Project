@@ -35,7 +35,7 @@
                             <th>Nisn</th>
                             <th>Nama</th>
                             <th>Kelas</th>
-                            <th>Jurusan</th>
+                            {{-- <th>Jurusan</th> --}}
                             <th>Nilai Akhir To</th>
                             <th>Grade</th>
                             <th>Aksi</th>
@@ -49,7 +49,7 @@
                                 <td><span class="badge bg-primary">{{ $data->siswa->nis }}</span></td>
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ $data->kelas->kelas }}</td>
-                                <td>{{ $data->kelas->jurusan }}</td>
+                                {{-- <td>{{ $data->kelas->jurusan }}</td> --}}
                                 <td>{{ $data->nilai_akhir }}</td>
                                 <td>{{ $data->nilai_grade }}</td>
                                 <td>

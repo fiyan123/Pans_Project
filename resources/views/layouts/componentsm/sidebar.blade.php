@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-center">
             <div class="logo">
                 <a><img src="{{ asset('assetsm/images/logo/logo2.png') }}" alt="Logo" style="width: 200px; height:99px">
-                    <p class="h5 mt-3">Web Penilaian TO</p>
+                    <p class="h5 mt-3">Web Penilaian Akhir</p>
                 </a>
             </div>
         </div>
@@ -34,10 +34,10 @@
             </li>
 
             @can('guru')
-                <li class="sidebar-item {{ Request::is('guru/nilai*') ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::is('walikelas/nilai*') ? 'active' : '' }}">
                     <a href="{{ route('nilai.index') }}" class="sidebar-link">
                         <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                        <span>Penilaian TO</span>
+                        <span>Penilaian Hasil Akhir</span>
                     </a>
                 </li>
             @endcan
@@ -69,12 +69,7 @@
 
             <li class="sidebar-title">Aktifitas</li>
                 <li class="sidebar-item  ">
-                    {{-- <!-- Button trigger modal -->
-                    <a class="sidebar-link" data-bs-toggle="modal" data-bs-target="#logoutModal">
-                        <dt class="the-icon"><span class="fa-fw select-all-fill fas"></span></dt>
-                        <span>Keluar</span>
-                    </a> --}}
-
+                   
                     <form id="logOut" action="/logout" method="POST">
                         @csrf
                         <a class="sidebar-link" id="logOut">

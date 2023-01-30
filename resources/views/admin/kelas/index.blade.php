@@ -26,7 +26,7 @@
                         <dt class="the-icon"><span class="fa-fw select-all fas"></span> Tambah Data</dt>
                     </button>
                 </div>
-                <table class="table table-striped-bordered" id="table_id">
+                <table class="table" id="table_id">
                     <thead>
                         <tr>
                             <th>#</th>

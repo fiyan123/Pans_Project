@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Tentang Website</h6>
-                    <h1 class="mb-4">Penilaian Akademik Nilai Siswa</h1>
+                    <h1 class="mb-4">Penilaian Akhir Nilai Siswa</h1>
                     <p class="mb-4"> “Jika Anda membuat rencana untuk satu tahun, taburlah padi, jika Anda membuat rencana untuk satu dekade, tanamlah pohon, jika Anda membuat rencana untuk seumur hidup, didiklah orang-orang” – Pepatah Cina</p>
                     <p class="mb-4">"Belajar tanpa berpikir adalah pekerjaan yang sia-sia, berpikir tanpa belajar itu berbahaya." – Konfusius</p>
                     <div class="row gy-2 gx-4 mb-4">

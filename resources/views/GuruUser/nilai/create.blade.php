@@ -79,7 +79,7 @@
                     <div class="mb-3">
                         <label class="form-label">Try Out 3</label>
                         <input type="number" class="form-control  @error('to3') is-invalid @enderror" name="to3"
-                            value="{{ old('to3') }}" placeholder="nilai to3">
+                            value="{{ old('to3') }}" placeholder="nilai to 3">
                         @error('to3')
                             <span class="invalid-feedback" role="alert">~
                                 <strong>{{ $message }}</strong>
@@ -90,7 +90,7 @@
                     <div class="mb-3">
                         <label class="form-label">Try Out 4</label>
                         <input type="number" class="form-control  @error('to4') is-invalid @enderror" name="to4"
-                            value="{{ old('to4') }}" placeholder="nilai to4">
+                            value="{{ old('to4') }}" placeholder="nilai to 4">
                         @error('to4')
                             <span class="invalid-feedback" role="alert">~
                                 <strong>{{ $message }}</strong>

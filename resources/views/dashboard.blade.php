@@ -7,7 +7,7 @@
     </div>
 
     <div class="page-heading">
-        <h3>Penilaian Dashboard</h3>
+        <h3>Penilaian Statistik</h3>
     </div>
 
     <div class="row">

@@ -7,7 +7,7 @@
 
     <div class="col-12" id="nilai">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Data Raport</h6>
+            <h6 class="section-title bg-white text-center text-primary px-3">Data Nilai Akhir</h6>
             <h1 class="mb-3">Nilai Akhir Dari Siswa</h1>
         </div>
         <div class="card">
@@ -21,11 +21,11 @@
                             <th>Nama</th>
                             <th>Kelas</th>
                             <th>Jurusan</th>
-                            <th>Nilai Kehadiran</th>
-                            <th>Nilai Harian</th>
-                            <th>Nilai Pas</th>
-                            <th>Nilai Pat</th>
-                            <th>Nilai Raport</th>
+                            <th>Try Out 1</th>
+                            <th>Try Out 2</th>
+                            <th>Try Out 3</th>
+                            <th>Try Out 4</th>
+                            <th>Nilai Akhir</th>
                             <th>Grade</th>
                         </tr>
                     </thead>
@@ -38,11 +38,11 @@
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ $data->kelas->kelas }}</td>
                                 <td>{{ $data->kelas->jurusan }}</td>
-                                <td>{{ $data->nilai_kehadiran }}</td>
-                                <td>{{ $data->nilai_harian }}</td>
-                                <td>{{ $data->pas }}</td>
-                                <td>{{ $data->pat }}</td>
-                                <td>{{ $data->raport }}</td>
+                                <td>{{ $data->to1 }}</td>
+                                <td>{{ $data->to2}}</td>
+                                <td>{{ $data->to3 }}</td>
+                                <td>{{ $data->to4 }}</td>
+                                <td>{{ $data->nilai_akhir }}</td>
                                 <td>{{ $data->nilai_grade }}</td>
                             </tr>
                         @endforeach

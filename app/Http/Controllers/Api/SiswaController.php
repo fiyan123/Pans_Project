@@ -87,7 +87,7 @@ class SiswaController extends Controller
 
         return response()->json([
             "status"  => 200,
-            "message" => "Data Success Added",
+            "message" => "Data Success edited",
         ]);
     }
 
