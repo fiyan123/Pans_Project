@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SiswaController extends Controller
 {
@@ -27,7 +28,7 @@ class SiswaController extends Controller
         {
             //validasi
             $validated = $request->validate([
-                'nis'           => 'required|unique:siswas',
+                'nis'           => 'required|unique:siswas|min:5|max:10',
                 'nama'          => 'required',
                 'jenis_kelamin' => 'required',
                 'id_kelas'      => 'required',
@@ -35,6 +36,18 @@ class SiswaController extends Controller
 
             $siswa = new Siswa();
 
+            // $nis = DB::table('nis')->select(DB::raw('MAX(RIGHT(nis,3)) as kode'));
+            // if ($nis->count() > 0) {
+            //     foreach ($nis->get() as $nis) {
+            //         $x = ((int) $nis->kode) + 1;
+            //         $kode = sprintf('%03s',$x);
+            //     }
+            // }
+            // else {
+            //     $kode = '001';
+            // }
+
+            // $siswa->nis           = 'IAN-' . date('dmy') . $kode;
             $siswa->nis           = $request->nis;
             $siswa->nama          = $request->nama;
             $siswa->jenis_kelamin = $request->jenis_kelamin;
@@ -64,7 +77,7 @@ class SiswaController extends Controller
         {
             // Validasi
             $validated = $request->validate([
-                'nis'           => 'required',
+                'nis'           => 'required||min:5|max:10',
                 'nama'          => 'required',
                 'jenis_kelamin' => 'required',
                 'id_kelas'      => 'required',
@@ -89,7 +102,6 @@ class SiswaController extends Controller
 
             $siswa->delete();
 
-            return redirect()->route('siswa.index')
-                ->with('success', 'Data berhasil dihapus!');
+            return redirect()->route('siswa.index')->with('success', 'Data berhasil dihapus!');
         }
 }

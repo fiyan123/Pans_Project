@@ -14,10 +14,6 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <div class="mb-3">
-                    <label class="form-label">Nama Guru</label>
-                    <input type="text" class="form-control" name="id_guru" value="{{ $nilai->guru->nama }}" readonly>
-                </div>
 
                 <div class="mb-3">
                     <label class="form-label">Nisn</label>
@@ -25,7 +21,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nama</label>
+                    <label class="form-label">Nama Siswa</label>
                     <input type="text" class="form-control" name="id_siswa" value="{{ $nilai->siswa->nama }}" readonly>
                 </div>
 
@@ -40,32 +36,37 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Try Out 1</label>
+                    <label class="form-label">Mata Pelajaran</label>
+                    <input type="text" class="form-control" name="id_guru" value="{{ $nilai->guru->mata_pelajaran }}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nilai Pelajaran</label>
                     <input type="number" class="form-control" name="to1" value="{{ $nilai->to1 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Try Out 2</label>
+                    <label class="form-label">Nilai Ujian</label>
                     <input type="number" class="form-control" name="to2" value="{{ $nilai->to2 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Try Out 3</label>
+                    <label class="form-label">Nilai Keterampilan</label>
                     <input type="number" class="form-control" name="to3" value="{{ $nilai->to3 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Try Out 4</label>
+                    <label class="form-label">Nilai Pengetauan</label>
                     <input type="number" class="form-control" name="to4" value="{{ $nilai->to4 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Akhir To</label>
+                    <label class="form-label">Nilai Akhir</label>
                     <input type="number" class="form-control" name="nilai_akhir" value="{{ $nilai->nilai_akhir }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Grade Nilai</label>
+                    <label class="form-label">Predikat</label>
                     <input type="text" class="form-control" name="nilai_grade" value="{{ $nilai->nilai_grade }}" readonly>
                 </div>
 

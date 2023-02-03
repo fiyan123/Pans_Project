@@ -24,15 +24,15 @@ class UsersSeeder extends Seeder
         
         // membuat sample user
         $adminUser = new User();
-        $adminUser->name = 'Admin Sekolah';
+        $adminUser->name = 'Admin Website';
         $adminUser->email = 'admin@gmail.com'; // optional
         $adminUser->password = bcrypt('password');
         $adminUser->save();
         $adminUser->attachRole($adminRole);
 
         $memberUser = new User();
-        $memberUser->name = 'Guru Sekolah';
-        $memberUser->email = 'guru@gmail.com'; // optional
+        $memberUser->name = 'Wali Kelas';
+        $memberUser->email = 'walkel@gmail.com'; // optional
         $memberUser->password = bcrypt('password');
         $memberUser->save();
         $memberUser->attachRole($memberRole);

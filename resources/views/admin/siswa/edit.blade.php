@@ -21,7 +21,7 @@
                     @method('put')
                     <div class="mb-3">
                         <label class="form-label">Nisn</label>
-                        <input type="text" class="form-control  @error('nis') is-invalid @enderror" name="nis" value="{{ $siswa->nis }}">
+                        <input type="text" class="form-control  @error('nis') is-invalid @enderror" name="nis" value="{{ $siswa->nis }}" onkeypress="return hanyaAngka(event)" min="0">
                         @error('nis')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -88,4 +88,13 @@
         </div>
     </div>
 
+{{-- Inputan Hanya Angka --}}
+<script>
+    function hanyaAngka(event) {
+        var angka = (event.which) ? event.which : event.keyCode
+        if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+            return false;
+        return true;
+    }
+</script>
 @endsection

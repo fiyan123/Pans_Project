@@ -29,7 +29,7 @@
                 <table class="table" id="table_id">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No</th>
                             <th>Kelas</th>
                             <th>Jurusan</th>
                             <th>Aksi</th>
@@ -87,6 +87,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                     </form>
                                 </td>
                             </tr>

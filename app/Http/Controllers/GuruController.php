@@ -25,7 +25,7 @@ class GuruController extends Controller
     {
         //validasi
         $validated = $request->validate([
-            'nip'            => 'required|unique:gurus',
+            'nip'            => 'required|unique:gurus|min:5|max:10',
             'nama'           => 'required',
             'jenis_kelamin'  => 'required',
             'mata_pelajaran' => 'required',
@@ -61,7 +61,7 @@ class GuruController extends Controller
     {
         // Validasi
         $validated = $request->validate([
-            'nip'            => 'required',
+            'nip'            => 'required|min:5|max:10',
             'nama'           => 'required',
             'jenis_kelamin'  => 'required',
             'mata_pelajaran' => 'required',

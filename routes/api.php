@@ -8,7 +8,6 @@ use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\KelasController;
 use App\Http\Controllers\Api\NilaiController;
 use App\Http\Controllers\Api\SiswaController;
-// use App\Http\Controllers\Auth\LoginController;
 
 
 /*
@@ -27,7 +26,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Authentikasi
-// Route::post('/login', LoginController::class)->name('login');
 Route::post('/register', [\App\Http\Controllers\Api\AuthController::class, 'register']);
 Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {

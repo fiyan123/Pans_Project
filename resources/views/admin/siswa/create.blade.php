@@ -3,19 +3,19 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Tambah Data Baru</h4>
+                <h4 class="modal-title" id="exampleModalLabel">Tambah Data Siswa</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('siswa.store') }}" method="post">
+                <form action="{{ route('siswa.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Nisn</label>
                         <input type="number" class="form-control @error('nis') is-invalid @enderror" name="nis"
-                            id="nis" value="{{ old('nis') }}" placeholder="nis">
+                            id="nis" value="{{ old('nis') }}" placeholder="nis" min="0" onkeypress="return hanyaAngka(event)">
 
                         @error('nis')
-                            <span class="invalid-feedback" role="alert">~
+                            <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -85,3 +85,13 @@
         </div>
     </div>
 </div>
+
+{{-- Inputan Hanya Angka --}}
+<script>
+    function hanyaAngka(event) {
+        var angka = (event.which) ? event.which : event.keyCode
+        if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+            return false;
+        return true;
+    }
+</script>

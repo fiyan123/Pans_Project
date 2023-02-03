@@ -2,16 +2,32 @@
 
 namespace App\Exports;
 
-use App\Models\Nilai;
-use Maatwebsite\Excel\Concerns\FromCollection;
 
-class NilaiExport implements FromCollection
+use App\Models\Nilai;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\Exportable;
+
+class NilaiExport implements FromView,ShouldAutoSize
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+
+    use Exportable; 
+
+    private $nilais;
+
+    public function __construct()
     {
-        return Nilai::all();
+        $this->nilais = Nilai::all();
     }
+
+    public function view() : View
+    {
+        // $nilai = Nilai::all();
+        return view('export.invoices', [
+            'nilais' => $this->nilais
+        ]);
+    }
+
 }

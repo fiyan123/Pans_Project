@@ -29,7 +29,7 @@
                 <table class="table table" id="table_id">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No</th>
                             <th>Nip</th>
                             <th>Nama</th>
                             <th>Mata Pelajaran</th>

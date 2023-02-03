@@ -7,12 +7,12 @@
     </script>
 
     {{-- Error Page --}}
-    @if ($errors->any())
+    @if (count($errors) > 0)
         @php
             toast('Data tidak valid!', 'error');
         @endphp
     @endif
-
+  
     <div class="page-heading">
         <h3>Table Data Siswa</h3>
     </div>

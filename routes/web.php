@@ -13,6 +13,7 @@ use App\Http\Controllers\Siswa_dataController;
 
 Auth::routes();
 
+
 // Route Siswa
 Route::get('/', [Siswa_dataController::class, 'index']);
 Route::get('/galeri', [GaleriController::class, 'index'])->middleware('auth');

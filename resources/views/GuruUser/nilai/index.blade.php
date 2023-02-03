@@ -30,14 +30,13 @@
                 <table class="table table-bordered-striped" id="table_id">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Nama Guru</th>
+                            <th>No</th>
                             <th>Nisn</th>
-                            <th>Nama</th>
+                            <th>Nama Siswa</th>
                             <th>Kelas</th>
-                            {{-- <th>Jurusan</th> --}}
-                            <th>Nilai Akhir To</th>
-                            <th>Grade</th>
+                            <th>Mata Pelajaran</th>
+                            <th>Nilai Akhir</th>
+                            <th>Predikat</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -45,11 +44,10 @@
                         @foreach ($nilai as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->guru->nama }}</td>
                                 <td><span class="badge bg-primary">{{ $data->siswa->nis }}</span></td>
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ $data->kelas->kelas }}</td>
-                                {{-- <td>{{ $data->kelas->jurusan }}</td> --}}
+                                <td>{{ $data->guru->mata_pelajaran }}</td>
                                 <td>{{ $data->nilai_akhir }}</td>
                                 <td>{{ $data->nilai_grade }}</td>
                                 <td>
@@ -66,10 +64,7 @@
                                             data-bs-placement="top" title="Detail Data">
                                             <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
                                         </a> |
-                                        {{-- <button type="button" class="btn btn-outline-danger btn-icon-text" data-bs-toggle="modal"
-                                            data-bs-target="#modalCenter">
-                                            <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                                        </button> --}}
+                                      
                                         <button type="submit" class="btn btn-outline-danger btn-icon-text"
                                             onclick="return confirm('Hapus Data Ini?')" data-bs-toggle="tooltip"
                                             data-bs-placement="top" title="Hapus Data">
@@ -112,6 +107,7 @@
             </div>
         </div>
     </section>
+
     @include('GuruUser.nilai.create')
 
 @endsection

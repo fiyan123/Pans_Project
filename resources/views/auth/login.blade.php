@@ -22,7 +22,7 @@
     <div class="login-box mb-5">
         <div class="login-logo">
             <a class="text-decoration-none"><strong style="font-family: 'Times New Roman', Times, serif">
-                    Penilaian Akademik Nilai Siswa</strong>
+                    Penilaian Akhir Nilai Siswa</strong>
             </a>
         </div>
         <div class="card">

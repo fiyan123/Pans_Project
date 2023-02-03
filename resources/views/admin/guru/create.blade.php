@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Tambah Data Baru</h4>
+                <h4 class="modal-title" id="exampleModalLabel">Tambah Data Siswa</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -13,7 +13,7 @@
                     <div class="mb-3">
                         <label class="form-label">Nip</label>
                         <input type="number" class="form-control  @error('nip') is-invalid @enderror" name="nip"
-                            id="nip" value="{{ old('nip') }}" placeholder="nip">
+                            id="nip" value="{{ old('nip') }}" placeholder="nip" min="0" onkeypress="return hanyaAngka(event)">
                         @error('nip')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -76,3 +76,13 @@
         </div>
     </div>
 </div>
+
+{{-- Inputan Hanya Angka --}}
+<script>
+    function hanyaAngka(event) {
+        var angka = (event.which) ? event.which : event.keyCode
+        if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+            return false;
+        return true;
+    }
+</script>

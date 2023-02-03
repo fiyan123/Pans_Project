@@ -55,7 +55,7 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                   Copyright &copy; Penilaian Akademik Nilai Siswa.
+                   Copyright &copy; Penilaian Akhir Nilai Siswa.
                 </div>
             </div>
         </div>

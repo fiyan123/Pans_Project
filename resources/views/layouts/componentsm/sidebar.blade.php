@@ -2,8 +2,8 @@
     <div class="sidebar-header">
         <div class="d-flex justify-content-center">
             <div class="logo">
-                <a><img src="{{ asset('assetsm/images/logo/logo2.png') }}" alt="Logo" style="width: 200px; height:99px">
-                    <p class="h5 mt-3">Web Penilaian Akhir</p>
+                <a><img src="{{ asset('assetsm/images/logo/logo4.png') }}" alt="Logo" style="width: 200px; height:130px">
+                    <p class="h5 mt-2">Web Penilaian Akhir</p>
                 </a>
             </div>
         </div>

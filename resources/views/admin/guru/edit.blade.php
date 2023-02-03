@@ -10,9 +10,11 @@
     </div>
 
     <div class="col-md-12">
+
         <div class="page-heading">
             <h3>Data Dari Guru {{ $guru->nama }}</h3>
         </div>
+
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('guru.update', $guru->id) }}" method="post">
@@ -21,7 +23,7 @@
                     <div class="mb-3">
                         <label class="form-label">Nip</label>
                         <input type="number" class="form-control  @error('nip') is-invalid @enderror"
-                            name="nip" value="{{ $guru->nip }}">
+                            name="nip" value="{{ $guru->nip }}" onkeypress="return hanyaAngka(event)" min="0">
                         @error('nip')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -85,5 +87,15 @@
             </div>
         </div>
     </div>
+
+{{-- Inputan Hanya Angka --}}
+<script>
+    function hanyaAngka(event) {
+        var angka = (event.which) ? event.which : event.keyCode
+        if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+            return false;
+        return true;
+    }
+</script>
         
 @endsection
