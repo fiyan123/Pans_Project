@@ -13,6 +13,7 @@
                 <th>No</th>
                 <th>Nisn Siswa</th>
                 <th>Nama Siswa</th>
+                <th>Jenis Kelamin</th>
                 <th>Kelas</th>
                 <th>Jurusan</th>
                 <th>Mata Pelajaran</th>
@@ -30,6 +31,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $data->siswa->nis }}</td>
                     <td>{{ $data->siswa->nama }}</td>
+                    <td>{{ $data->siswa->jenis_kelamin }}</td>
                     <td>{{ $data->kelas->kelas }}</td>
                     <td>{{ $data->kelas->jurusan }}</td>
                     <td>{{ $data->guru->mata_pelajaran }}</td>

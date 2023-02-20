@@ -13,6 +13,7 @@ class DashboardController extends Controller
 {
     public function index() 
     {
+        
         $kelas  = Kelas::count();
         $gurus  = Guru::count();
         $siswas = Siswa::count();

@@ -8,7 +8,6 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="/" class="nav-item nav-link">Beranda</a>
-            <a href="#nilai" class="nav-item nav-link">Nilai Akhir Siswa</a>
             <a href="#about" class="nav-item nav-link">Tentang</a>
 
             @auth

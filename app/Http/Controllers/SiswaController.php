@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class SiswaController extends Controller
 {
@@ -26,34 +28,34 @@ class SiswaController extends Controller
 
         public function store(Request $request)
         {
-            //validasi
+            // Validasi Data
             $validated = $request->validate([
                 'nis'           => 'required|unique:siswas|min:5|max:10',
                 'nama'          => 'required',
                 'jenis_kelamin' => 'required',
                 'id_kelas'      => 'required',
+
+            // Validasi Akun
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
 
-            $siswa = new Siswa();
+            // Pembuatan Akun Siswa
+            User::create([
 
-            // $nis = DB::table('nis')->select(DB::raw('MAX(RIGHT(nis,3)) as kode'));
-            // if ($nis->count() > 0) {
-            //     foreach ($nis->get() as $nis) {
-            //         $x = ((int) $nis->kode) + 1;
-            //         $kode = sprintf('%03s',$x);
-            //     }
-            // }
-            // else {
-            //     $kode = '001';
-            // }
+                'name'     => $validated['name'],
+                'email'    => $validated['email'],
+                'password' => Hash::make($validated['password']),
+            ]);
 
-            // $siswa->nis           = 'IAN-' . date('dmy') . $kode;
-            $siswa->nis           = $request->nis;
-            $siswa->nama          = $request->nama;
-            $siswa->jenis_kelamin = $request->jenis_kelamin;
-            $siswa->id_kelas      = $request->id_kelas;
+            Siswa::create([
 
-            $siswa->save();
+                'nis'           => $validated['nis'],
+                'nama'          => $validated['nama'],
+                'jenis_kelamin' => $validated['jenis_kelamin'],
+                'id_kelas'      => $validated['id_kelas'],
+            ]);
 
             return redirect()->route('siswa.index')->with('success', 'Data berhasil ditambah!');
         }
@@ -100,8 +102,20 @@ class SiswaController extends Controller
         {
             $siswa = Siswa::findOrFail($id);
 
+            $user  = User::findOrFail($id);
+
             $siswa->delete();
+
+            $user->delete();
 
             return redirect()->route('siswa.index')->with('success', 'Data berhasil dihapus!');
         }
+
+        // Method Data Dinamis
+        public function getNamaSiswa($id)
+        {
+            $siswa = Siswa::where('id_kelas', $id)->get();
+            return response()->json($siswa);
+        }
+
 }

@@ -35,16 +35,4 @@ class Nilai extends Model
         return $this->belongsTo(Guru::class, 'id_guru');
     }
 
-    // Model Event
-    // public static function boot()
-    // {
-    //     parent::boot();
-    //     self::deleting(function ($var) {
-    //         if ($var->guru->count() > 0) {
-    //             # code...
-    //         }
-    //     });
-
-    // }
-
 }

@@ -69,23 +69,11 @@
                         @enderror
                     </div>
 
-
                     <div class="mb-3">
-                        <label class="form-label">Nilai Pelajaran</label>
-                        <input type="number" class="form-control  @error('to1') is-invalid @enderror"
-                            name="to1" value="{{ $nilai->to1 }}">
-                        @error('to1')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Nilai Ujian</label>
-                        <input type="number" class="form-control  @error('to2') is-invalid @enderror"
-                            name="to2" value="{{ $nilai->to2 }}">
-                        @error('to2')
+                        <label class="form-label">Nilai Pengetauan</label>
+                        <input type="number" class="form-control  @error('nilai1') is-invalid @enderror"
+                            name="nilai1" value="{{ $nilai->nilai1 }}" min="0" onkeypress="return hanyaAngka(event)">
+                        @error('nilai1')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -94,9 +82,20 @@
 
                     <div class="mb-3">
                         <label class="form-label">Nilai Keterampilan</label>
-                        <input type="number" class="form-control  @error('to3') is-invalid @enderror"
-                            name="to3" value="{{ $nilai->to3 }}">
-                        @error('to3')
+                        <input type="number" class="form-control  @error('nilai2') is-invalid @enderror"
+                            name="nilai2" value="{{ $nilai->nilai2 }}" min="0" onkeypress="return hanyaAngka(event)">
+                        @error('nilai2')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Nilai Mata Pelajaran</label>
+                        <input type="number" class="form-control @error('nilai3') is-invalid @enderror"
+                            name="nilai3" value="{{ $nilai->nilai3 }}" min="0" onkeypress="return hanyaAngka(event)">
+                        @error('nilai3')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -104,10 +103,10 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Nilai Pengetauan</label>
-                        <input type="number" class="form-control  @error('to4') is-invalid @enderror"
-                            name="to4" value="{{ $nilai->to4 }}">
-                        @error('to4')
+                        <label class="form-label">Nilai Ujian</label>
+                        <input type="number" class="form-control @error('nilai4') is-invalid @enderror"
+                            name="nilai4" value="{{ $nilai->nilai4 }}" min="0" onkeypress="return hanyaAngka(event)">
+                        @error('nilai4')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -124,4 +123,14 @@
             </div>
         </div>
     </div>
+
+    {{-- Input Hanya Angka --}}
+    <script>
+        function hanyaAngka(event) {
+            var angka = (event.which) ? event.which : event.keyCode
+            if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+                return false;
+            return true;
+        }
+    </script>
 @endsection

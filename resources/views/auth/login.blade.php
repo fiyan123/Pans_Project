@@ -21,9 +21,7 @@
 <body class="hold-transition login-page">
     <div class="login-box mb-5">
         <div class="login-logo">
-            <a class="text-decoration-none"><strong style="font-family: 'Times New Roman', Times, serif">
-                    Penilaian Akhir Nilai Siswa</strong>
-            </a>
+            <strong style="font-family: 'Times New Roman', Times, serif">Penilaian Akhir Nilai Siswa</strong>
         </div>
         <div class="card">
             <div class="card-body login-card-body mb-5">
@@ -64,11 +62,8 @@
                         @enderror
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-5">
                             <button type="submit" class="btn btn-primary btn-block" title="masuk">Masuk</button>
-                        </div>
-                        <div class="col-6">
-                            <a href="{{ url('/register') }}" class="btn btn-primary btn-block">Daftar Akun</a>
                         </div>
                     </div>
                 </form>

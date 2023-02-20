@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-center">
             <div class="logo">
                 <a><img src="{{ asset('assetsm/images/logo/logo4.png') }}" alt="Logo" style="width: 200px; height:130px">
-                    <p class="h5 mt-2">Web Penilaian Akhir</p>
+                    <p class="h5 mt-2">Penilaian Akhir Nilai</p>
                 </a>
             </div>
         </div>
@@ -26,6 +26,13 @@
                 </a>
             </li>
 
+            <li class="sidebar-item {{ Request::is('nilai_akhir*') ? 'active' : '' }}">
+                <a href="{{ url('/nilai_akhir') }}" class="sidebar-link">
+                    <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
+                    <span>Data Nilai</span>
+                </a>
+            </li>
+
             <li class="sidebar-item {{ Request::is('galeri') ? 'active' : '' }}">
                 <a href="{{ url('/galeri') }}" class="sidebar-link">
                     <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
@@ -34,10 +41,10 @@
             </li>
 
             @can('guru')
-                <li class="sidebar-item {{ Request::is('walikelas/nilai*') ? 'active' : '' }}">
+                <li class="sidebar-item {{ Request::is('guru/nilai*') ? 'active' : '' }}">
                     <a href="{{ route('nilai.index') }}" class="sidebar-link">
                         <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                        <span>Penilaian Hasil Akhir</span>
+                        <span>Penilaian Siswa</span>
                     </a>
                 </li>
             @endcan

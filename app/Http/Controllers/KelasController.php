@@ -37,7 +37,7 @@ class KelasController extends Controller
         $kelas->save();
 
         return redirect()->route('kelas.index')
-            ->with('success', 'Data Berhasil Ditambah!');
+            ->with('success', 'Data Kelas '. $kelas->kelas . ' Dibuat!');
     }
 
     public function show($id)

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Guru;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class GuruController extends Controller
 {
@@ -23,24 +25,37 @@ class GuruController extends Controller
 
     public function store(Request $request)
     {
-        //validasi
+        // validasi data
         $validated = $request->validate([
             'nip'            => 'required|unique:gurus|min:5|max:10',
             'nama'           => 'required',
             'jenis_kelamin'  => 'required',
             'mata_pelajaran' => 'required',
+
+        // Validasi Akun
+            'name'     => ['required', 'string', 'max:255'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        $guru = new Guru();
+        // Akun Create
+        User::create([
 
-        $guru->nip             = $request->nip;
-        $guru->nama            = $request->nama;
-        $guru->jenis_kelamin   = $request->jenis_kelamin;
-        $guru->mata_pelajaran  = $request->mata_pelajaran;
-        $guru->save();
+            'name'     => $validated['name'],
+            'email'    => $validated['email'],
+            'password' => Hash::make($validated['password']),
+        ]);
 
-        return redirect()->route('guru.index')
-            ->with('success', 'Data berhasil ditambah!');
+        // Data Create
+        Guru::create([
+
+            'nip'           => $validated['nip'],
+            'nama'          => $validated['nama'],
+            'jenis_kelamin' => $validated['jenis_kelamin'],
+            'mata_pelajaran'=> $validated['mata_pelajaran'],
+        ]);
+
+        return redirect()->route('guru.index')->with('success', 'Data berhasil ditambah!');
     }
 
     public function show($id)
@@ -82,8 +97,12 @@ class GuruController extends Controller
     public function destroy($id)
     {
         $guru = Guru::findOrFail($id);
+
+        $user = User::findOrFail($id);
         
         $guru->delete();
+        
+        $user->delete();
         
         return redirect()->route('guru.index')
             ->with('success', 'Data berhasil dihapus!');

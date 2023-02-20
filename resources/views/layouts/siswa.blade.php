@@ -69,13 +69,14 @@
         @include('layouts.components_siswa.service')
     <!-- Service End -->
 
-    {{-- About --}}
-        @include('layouts.components_siswa.about')
-    {{-- End About --}}
-
+    
     <!-- Testimonial Start -->
         @include('layouts.components_siswa.testimonial')
     <!-- Testimonial End -->
+
+    {{-- About --}}
+        @include('layouts.components_siswa.about')
+    {{-- End About --}}
 
     <!-- Footer Start -->
         @include('layouts.components_siswa.footer')

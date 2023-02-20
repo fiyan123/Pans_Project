@@ -18,10 +18,12 @@ class CreateNilaisTable extends Migration
             $table->unsignedBigInteger('id_guru');
             $table->unsignedBigInteger('id_siswa');
             $table->unsignedBigInteger('id_kelas');
-            $table->integer('to1');
-            $table->integer('to2');
-            $table->integer('to3');
-            $table->integer('to4');
+            $table->foreignId('user_id');
+            
+            $table->integer('nilai1');
+            $table->integer('nilai2');
+            $table->integer('nilai3');
+            $table->integer('nilai4');
             $table->integer('nilai_akhir');
             $table->string('nilai_grade');
 

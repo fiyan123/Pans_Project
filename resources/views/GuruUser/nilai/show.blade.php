@@ -41,23 +41,23 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Pelajaran</label>
-                    <input type="number" class="form-control" name="to1" value="{{ $nilai->to1 }}" readonly>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Nilai Ujian</label>
-                    <input type="number" class="form-control" name="to2" value="{{ $nilai->to2 }}" readonly>
+                    <label class="form-label">Nilai Pengetauan</label>
+                    <input type="number" class="form-control" name="nilai4" value="{{ $nilai->nilai1 }}" readonly>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Nilai Keterampilan</label>
-                    <input type="number" class="form-control" name="to3" value="{{ $nilai->to3 }}" readonly>
+                    <input type="number" class="form-control" name="nilai3" value="{{ $nilai->nilai2 }}" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nilai Pengetauan</label>
-                    <input type="number" class="form-control" name="to4" value="{{ $nilai->to4 }}" readonly>
+                    <label class="form-label">Nilai Mata Pelajaran</label>
+                    <input type="number" class="form-control" name="nilai1" value="{{ $nilai->nilai3 }}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nilai Ujian</label>
+                    <input type="number" class="form-control" name="nilai2" value="{{ $nilai->nilai4 }}" readonly>
                 </div>
 
                 <div class="mb-3">

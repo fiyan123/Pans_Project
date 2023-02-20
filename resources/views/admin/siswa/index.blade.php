@@ -62,10 +62,7 @@
                                             data-bs-placement="top" title="Detail Data">
                                             <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
                                         </a> |
-                                        {{-- <button type="button" class="btn btn-outline-danger btn-icon-text" data-bs-toggle="modal"
-                                            data-bs-target="#modalCenter">
-                                            <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                                        </button> --}}
+                                        
                                         <button type="submit" class="btn btn-outline-danger btn-icon-text"
                                             onclick="return confirm('Hapus Data Ini?')" data-bs-toggle="tooltip"
                                             data-bs-placement="top" title="Hapus Data">

@@ -14,7 +14,7 @@
     @endif
 
     <div class="page-heading">
-        <h3>Table Data Nilai Siswa</h3>
+        <h3>Table Data Penilaian Siswa</h3>
     </div>
 
     <section class="section">
