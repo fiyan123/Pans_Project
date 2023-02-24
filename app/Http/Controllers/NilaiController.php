@@ -17,7 +17,7 @@ class NilaiController extends Controller
     public function index()
     {
 
-        $nilai = Nilai::where('user_id', auth()->user()->id)->get();
+        $nilai = Nilai::where('user_id', auth()->user()->id)->latest()->get();
         $kelas = Kelas::all();
         $guru  = Guru::all();
         $siswa = Siswa::all();

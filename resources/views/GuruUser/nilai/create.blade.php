@@ -10,7 +10,7 @@
 
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel" style="color: black">Tambah Data Nilai Baru</h4>
+                <h4 class="modal-title" id="exampleModalLabel">Tambah Data Nilai Baru</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -47,8 +47,8 @@
                     
                     <div class="mb-3">
                         <label class="form-label">Mata Pelajaran</label>
-                        <select name="id_guru" class="form-control @error('id_guru') is-invalid @enderror" id="id_guru">
-                            <option aria-disabled="true" hidden>pilih matpel</option>
+                        <select name="id_guru" class="form-select @error('id_guru') is-invalid @enderror" id="id_guru">
+                            <option aria-disabled="true" hidden>pilih mata pelajaran</option>
                             @foreach ($guru as $data)
                                 <option value="{{ $data->id }}">{{ $data->mata_pelajaran }}</option>
                             @endforeach
@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="row g-2">
-                        <div class="col mt-3">
+                        <div class="col mb-3">
                             <label class="form-label">Nilai Pengetauan</label>
                             <input type="number" class="form-control @error('nilai1') is-invalid @enderror"
                                 name="nilai1" value="{{ old('nilai1') }}" placeholder="input nilai" min="0" onkeypress="return hanyaAngka(event)">
@@ -71,7 +71,7 @@
                                 </span>
                             @enderror
                         </div>
-                        <div class="col mt-3">
+                        <div class="col mb-3">
                             <label class="form-label">Nilai Keterampilan</label>
                             <input type="number" class="form-control @error('nilai2') is-invalid @enderror" name="nilai2"
                                 value="{{ old('nilai2') }}" placeholder="input nilai" min="0" onkeypress="return hanyaAngka(event)">

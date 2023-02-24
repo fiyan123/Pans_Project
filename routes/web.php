@@ -25,7 +25,7 @@ Route::get('/register', function() {
 Route::get('/', function () {
     return view('layouts.siswa');
 });
-Route::resource('/nilai_akhir',Siswa_dataController::class);
+Route::resource('/nilai_akhir',Siswa_dataController::class)->middleware('auth');
 Route::get('/galeri', [GaleriController::class, 'index'])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -34,6 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route Role Guru
 Route::group(['prefix' => 'guru', 'middleware' => ['guru']], function() {
     Route::resource('nilai', NilaiController::class);
+    Route::post('/nilai/store',[NilaiController::class,'CreateValidate']);
     // Route Data Dinamis
     Route::get('getsiswa/{id}', [NilaiController::class, 'getNamaSiswa']);
 

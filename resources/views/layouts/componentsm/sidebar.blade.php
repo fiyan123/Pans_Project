@@ -26,20 +26,6 @@
                 </a>
             </li>
 
-            <li class="sidebar-item {{ Request::is('nilai_akhir*') ? 'active' : '' }}">
-                <a href="{{ url('/nilai_akhir') }}" class="sidebar-link">
-                    <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                    <span>Data Nilai</span>
-                </a>
-            </li>
-
-            <li class="sidebar-item {{ Request::is('galeri') ? 'active' : '' }}">
-                <a href="{{ url('/galeri') }}" class="sidebar-link">
-                    <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                    <span>Galeri Sekolah</span>
-                </a>
-            </li>
-
             @can('guru')
                 <li class="sidebar-item {{ Request::is('guru/nilai*') ? 'active' : '' }}">
                     <a href="{{ route('nilai.index') }}" class="sidebar-link">
@@ -48,6 +34,22 @@
                     </a>
                 </li>
             @endcan
+
+            <li class="sidebar-item {{ Request::is('nilai_akhir*') ? 'active' : '' }}">
+                <a href="{{ url('/nilai_akhir') }}" class="sidebar-link">
+                    <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
+                    <span>Data Nilai Siswa</span>
+                </a>
+            </li>
+
+
+            <li class="sidebar-item {{ Request::is('galeri') ? 'active' : '' }}">
+                <a href="{{ url('/galeri') }}" class="sidebar-link">
+                    <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
+                    <span>Galeri Sekolah</span>
+                </a>
+            </li>
+
 
             @can('admin')
                 <li class="sidebar-title">Admin Master</li>

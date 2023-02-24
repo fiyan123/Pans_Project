@@ -51,6 +51,7 @@ class SiswaController extends Controller
 
             Siswa::create([
 
+                // 'user_id' => $user->id;
                 'nis'           => $validated['nis'],
                 'nama'          => $validated['nama'],
                 'jenis_kelamin' => $validated['jenis_kelamin'],

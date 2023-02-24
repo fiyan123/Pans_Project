@@ -18,7 +18,7 @@ class Siswa_dataController extends Controller
     public function index()
     {
 
-        $nilais = Nilai::where('id_siswa', '=' ,Auth::user()->id)->latest()->get();
+        $nilais = Nilai::where('user_id', '=' ,Auth::user()->id)->latest()->get();
         // $email  = Auth::user()->email;
         // $nilais = Nilai::where('id_siswa', '=' ,Auth::user()->id)->get();
         $kelas  = Kelas::all();
