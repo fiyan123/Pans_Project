@@ -19,9 +19,11 @@ class CreateSiswasTable extends Migration
             $table->string('nama');
             $table->enum('jenis_kelamin', ['Laki-laki','Perempuan']);
             $table->unsignedBigInteger('id_kelas');
+            $table->unsignedBigInteger('user_siswa');
 
             // foreign key
             $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade');
+            $table->foreign('user_siswa')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

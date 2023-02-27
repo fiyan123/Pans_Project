@@ -41,22 +41,22 @@ class SiswaController extends Controller
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
             ]);
 
-            // Pembuatan Akun Siswa
-            User::create([
+            $users = new User();
 
-                'name'     => $validated['name'],
-                'email'    => $validated['email'],
-                'password' => Hash::make($validated['password']),
-            ]);
+            $users->name     = $request->name;
+            $users->email    = $request->email;
+            $users->password = Hash::make($validated['password']);
+            $users->save();
 
-            Siswa::create([
 
-                // 'user_id' => $user->id;
-                'nis'           => $validated['nis'],
-                'nama'          => $validated['nama'],
-                'jenis_kelamin' => $validated['jenis_kelamin'],
-                'id_kelas'      => $validated['id_kelas'],
-            ]);
+            $siswa = new Siswa();
+
+            $siswa['user_siswa']  = $users->id;
+            $siswa->nis           = $request->nis;
+            $siswa->nama          = $request->nama;
+            $siswa->jenis_kelamin = $request->jenis_kelamin;
+            $siswa->id_kelas      = $request->id_kelas;
+            $siswa->save();
 
             return redirect()->route('siswa.index')->with('success', 'Data berhasil ditambah!');
         }
@@ -103,11 +103,11 @@ class SiswaController extends Controller
         {
             $siswa = Siswa::findOrFail($id);
 
-            $user  = User::findOrFail($id);
+            $users  = User::findOrFail($id);
 
             $siswa->delete();
 
-            $user->delete();
+            $users->delete();
 
             return redirect()->route('siswa.index')->with('success', 'Data berhasil dihapus!');
         }

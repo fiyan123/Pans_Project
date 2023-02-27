@@ -18,13 +18,18 @@ class Siswa_dataController extends Controller
     public function index()
     {
 
-        $nilais = Nilai::where('user_id', '=' ,Auth::user()->id)->latest()->get();
-        // $email  = Auth::user()->email;
-        // $nilais = Nilai::where('id_siswa', '=' ,Auth::user()->id)->get();
-        $kelas  = Kelas::all();
+        if(auth()->user()->is_admin == 1 || auth()->user()->is_guru == 1){
+            $nilais = Nilai::all();
+        } 
+        else {
+            // Mengambil data nilai yang sesuai dengan user yang login
+            $siswa = Siswa::where('user_siswa',auth()->user()->id)->first();
+            $nilais = Nilai::where('id_siswa',$siswa->id)->latest()->get();
+        }
+        
         // dd($nilais);
    
-        return view('siswa_nilai.index', compact('nilais','kelas'));
+        return view('siswa_nilai.index', compact('nilais'));
     }
 
     public function show($id)

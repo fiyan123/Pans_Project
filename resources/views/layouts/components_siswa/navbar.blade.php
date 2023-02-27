@@ -16,7 +16,6 @@
                         data-bs-toggle="dropdown">Hi,{{ Auth::user()->name }}</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="/home" class="dropdown-item"><i class="bi bi-globe2"></i>&nbsp; Beranda</a>
-                        <a href="/dashboard" class="dropdown-item"><i class="bi bi-grid-fill"></i>&nbsp; Dashboard</a>
                     </div>
                 </div>
             @else

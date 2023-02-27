@@ -18,7 +18,7 @@ class CreateNilaisTable extends Migration
             $table->unsignedBigInteger('id_guru');
             $table->unsignedBigInteger('id_siswa');
             $table->unsignedBigInteger('id_kelas');
-            $table->foreignId('user_id');
+            $table->foreignId('user_guru');
             
             $table->integer('nilai1');
             $table->integer('nilai2');

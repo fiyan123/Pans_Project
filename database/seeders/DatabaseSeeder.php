@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UsersSeeder::class);
         
-        $this->call(KelasSeeder::class);
+        // $this->call(KelasSeeder::class);
 
-        $this->call(SiswaSeeder::class);
+        // $this->call(SiswaSeeder::class);
 
-        $this->call(GuruSeeder::class);
+        // $this->call(GuruSeeder::class);
 
     }
 }

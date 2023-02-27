@@ -113,10 +113,10 @@
                             @enderror
                         </div>
                         <div class="col mb-3">
-                            <label class="form-label">Ketik Password</label>
+                            <label class="form-label">Konfirmasi Password</label>
                             <input type="password" name="password_confirmation"
                                 class="form-control @error('password_confirmation') is-invalid @enderror"
-                                placeholder="ketik password">
+                                placeholder="konfirmasi password">
         
                             @error('password_confirmation')
                                 <span class="invalid-feedback" role="alert">

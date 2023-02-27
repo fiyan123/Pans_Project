@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-center">
             <div class="logo">
                 <a><img src="{{ asset('assetsm/images/logo/logo4.png') }}" alt="Logo" style="width: 200px; height:130px">
-                    <p class="h5 mt-2">Penilaian Akhir Nilai</p>
+                    <p class="h6 mt-2">Penilaian Akhir Nilai Siswa</p>
                 </a>
             </div>
         </div>
@@ -19,12 +19,6 @@
             </li>
 
             <li class="sidebar-title">Main Menu</li>
-            <li class="sidebar-item {{ Request::is('dashboard') ? 'active' : '' }}">
-                <a href="/dashboard" class="sidebar-link">
-                    <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
-                    <span>Dashboard</span>
-                </a>
-            </li>
 
             @can('guru')
                 <li class="sidebar-item {{ Request::is('guru/nilai*') ? 'active' : '' }}">
@@ -53,6 +47,13 @@
 
             @can('admin')
                 <li class="sidebar-title">Admin Master</li>
+
+                <li class="sidebar-item {{ Request::is('dashboard') ? 'active' : '' }}">
+                    <a href="/dashboard" class="sidebar-link">
+                        <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
 
                 <li class="sidebar-item {{ Request::is('admin/kelas*') ? 'active' : '' }}">
                     <a href="{{ route('kelas.index') }}" class="sidebar-link">

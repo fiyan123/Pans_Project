@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-12">
         <div class="page-heading">
-            <h3>Detail Nilai Pelajaran {{ $nilais->guru->mata_pelajaran }}, {{ $nilais->siswa->nama }}</h3>
+            <h3>Detail Nilai Pelajaran {{ $nilais->guru->mata_pelajaran }}, Dari {{ $nilais->siswa->nama }}</h3>
         </div>
         <div class="card">
             <div class="card-body">

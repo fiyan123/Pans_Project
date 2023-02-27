@@ -17,7 +17,7 @@ class NilaiController extends Controller
     public function index()
     {
 
-        $nilai = Nilai::where('user_id', auth()->user()->id)->latest()->get();
+        $nilai = Nilai::where('user_guru', auth()->user()->id)->latest()->get();
         $kelas = Kelas::all();
         $guru  = Guru::all();
         $siswa = Siswa::all();
@@ -52,10 +52,10 @@ class NilaiController extends Controller
             'id_guru'         => 'required',
             'id_siswa'        => 'required',
             'id_kelas'        => 'required',
-            'nilai1'          => 'required',
-            'nilai2'          => 'required',
-            'nilai3'          => 'required',
-            'nilai4'          => 'required',
+            'nilai1'          => 'required|min:0|max:100',
+            'nilai2'          => 'required|min:0|max:100',
+            'nilai3'          => 'required|min:0|max:100',
+            'nilai4'          => 'required|min:0|max:100',
         ]);
 
         $nilai = new Nilai();
@@ -81,7 +81,7 @@ class NilaiController extends Controller
             $grade = "E";
         }
 
-        $nilai['user_id'] = auth()->user()->id;
+        $nilai['user_guru'] = auth()->user()->id;
 
         $nilai->nilai_grade = $grade;
 
@@ -116,10 +116,10 @@ class NilaiController extends Controller
             'id_guru'         => 'required',
             'id_siswa'        => 'required',
             'id_kelas'        => 'required',
-            'nilai1'          => 'required',
-            'nilai2'          => 'required',
-            'nilai3'          => 'required',
-            'nilai4'          => 'required',
+            'nilai1'          => 'required|min:0|max:100',
+            'nilai2'          => 'required|min:0|max:100',
+            'nilai3'          => 'required|min:0|max:100',
+            'nilai4'          => 'required|min:0|max:100',
 
         ]);
 

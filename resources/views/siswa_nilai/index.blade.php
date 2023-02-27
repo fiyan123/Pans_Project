@@ -6,8 +6,13 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
+    {{-- Pengecekan Table Heading --}}
     <div class="page-heading">
-        <h3>Table Nilai {{ Auth::user()->name }}</h3>
+        @if(Auth::user()->is_admin == 1 ||  Auth::user()->is_guru == 1)
+            <h3>Table Semua Nilai Siswa</h3>
+        @else
+            <h3>Table Nilai {{ Auth::user()->name }}</h3>
+        @endif
     </div>
 
     <section class="section">

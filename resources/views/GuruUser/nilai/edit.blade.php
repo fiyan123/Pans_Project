@@ -72,7 +72,7 @@
                     <div class="mb-3">
                         <label class="form-label">Nilai Pengetauan</label>
                         <input type="number" class="form-control  @error('nilai1') is-invalid @enderror"
-                            name="nilai1" value="{{ $nilai->nilai1 }}" min="0" onkeypress="return hanyaAngka(event)">
+                            name="nilai1" value="{{ $nilai->nilai1 }}" min="0" max="100" onkeypress="return hanyaAngka(event)">
                         @error('nilai1')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -83,7 +83,7 @@
                     <div class="mb-3">
                         <label class="form-label">Nilai Keterampilan</label>
                         <input type="number" class="form-control  @error('nilai2') is-invalid @enderror"
-                            name="nilai2" value="{{ $nilai->nilai2 }}" min="0" onkeypress="return hanyaAngka(event)">
+                            name="nilai2" value="{{ $nilai->nilai2 }}" min="0" max="100" onkeypress="return hanyaAngka(event)">
                         @error('nilai2')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -94,7 +94,7 @@
                     <div class="mb-3">
                         <label class="form-label">Nilai Mata Pelajaran</label>
                         <input type="number" class="form-control @error('nilai3') is-invalid @enderror"
-                            name="nilai3" value="{{ $nilai->nilai3 }}" min="0" onkeypress="return hanyaAngka(event)">
+                            name="nilai3" value="{{ $nilai->nilai3 }}" min="0" max="100" onkeypress="return hanyaAngka(event)">
                         @error('nilai3')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -105,7 +105,7 @@
                     <div class="mb-3">
                         <label class="form-label">Nilai Ujian</label>
                         <input type="number" class="form-control @error('nilai4') is-invalid @enderror"
-                            name="nilai4" value="{{ $nilai->nilai4 }}" min="0" onkeypress="return hanyaAngka(event)">
+                            name="nilai4" value="{{ $nilai->nilai4 }}" min="0" max="100" onkeypress="return hanyaAngka(event)">
                         @error('nilai4')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

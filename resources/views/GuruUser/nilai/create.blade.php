@@ -64,7 +64,7 @@
                         <div class="col mb-3">
                             <label class="form-label">Nilai Pengetauan</label>
                             <input type="number" class="form-control @error('nilai1') is-invalid @enderror"
-                                name="nilai1" value="{{ old('nilai1') }}" placeholder="input nilai" min="0" onkeypress="return hanyaAngka(event)">
+                                name="nilai1" value="{{ old('nilai1') }}" placeholder="input nilai" min="0" max="100" onkeypress="return hanyaAngka(event)">
                             @error('nilai1')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -74,7 +74,7 @@
                         <div class="col mb-3">
                             <label class="form-label">Nilai Keterampilan</label>
                             <input type="number" class="form-control @error('nilai2') is-invalid @enderror" name="nilai2"
-                                value="{{ old('nilai2') }}" placeholder="input nilai" min="0" onkeypress="return hanyaAngka(event)">
+                                value="{{ old('nilai2') }}" placeholder="input nilai" min="0" max="100" onkeypress="return hanyaAngka(event)">
                             @error('nilai2')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -87,7 +87,7 @@
                         <div class="col mb-3">
                             <label class="form-label">Nilai Mata pelajaran</label>
                             <input type="number" class="form-control @error('nilai3') is-invalid @enderror" name="nilai3"
-                                value="{{ old('nilai3') }}" placeholder="input nilai" min="0" onkeypress="return hanyaAngka(event)">
+                                value="{{ old('nilai3') }}" placeholder="input nilai" min="0" max="100" onkeypress="return hanyaAngka(event)">
                             @error('nilai3')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -97,7 +97,7 @@
                         <div class="col mb-3">
                             <label class="form-label">Nilai ujian</label>
                             <input type="number" class="form-control @error('nilai4') is-invalid @enderror" name="nilai4"
-                                value="{{ old('nilai4') }}" placeholder="input nilai" min="0" onkeypress="return hanyaAngka(event)">
+                                value="{{ old('nilai4') }}" placeholder="input nilai" min="0" max="100" onkeypress="return hanyaAngka(event)">
                             @error('nilai4')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

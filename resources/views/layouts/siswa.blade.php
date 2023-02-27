@@ -69,11 +69,6 @@
         @include('layouts.components_siswa.service')
     <!-- Service End -->
 
-    
-    <!-- Testimonial Start -->
-        @include('layouts.components_siswa.testimonial')
-    <!-- Testimonial End -->
-
     {{-- About --}}
         @include('layouts.components_siswa.about')
     {{-- End About --}}
