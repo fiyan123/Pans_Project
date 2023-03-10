@@ -6,6 +6,13 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
+     <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <img src="{{ asset('assetsm/vendors/svg-loaders/audio.svg') }}" class="me-4" style="width: 5rem"
+            alt="audio">
+    </div>
+
     {{-- Pengecekan Table Heading --}}
     <div class="page-heading">
         @if(Auth::user()->is_admin == 1 ||  Auth::user()->is_guru == 1)
@@ -55,7 +62,10 @@
                 <a href="/exportNilaiExcel" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Download Excel">
                     <dt class="the-icon"><span class="fa-fw select-all fas"></span> Download</dt>
                 </a>
-                
+
+                <a href="/printPdf" target="_blank" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Cetak Pdf">
+                    <dt class="the-icon"><span class="fa-fw select-all fas"></span> Cetak</dt> 
+                </a>
             </div>
         </div>
     </section>

@@ -11,8 +11,6 @@ use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Siswa_dataController;
 
-Auth::routes();
-
 Auth::routes([
     'register' => false,
 ]);
@@ -25,9 +23,9 @@ Route::get('/register', function() {
 Route::get('/', function () {
     return view('layouts.siswa');
 });
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('admin');
 Route::resource('/nilai_akhir',Siswa_dataController::class)->middleware('auth');
 Route::get('/galeri', [GaleriController::class, 'index'])->middleware('auth');
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('admin');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
@@ -55,3 +53,6 @@ Route::group(['prefix'=>'admin','middleware'=>['admin']], function() {
 // Export Excel
 Route::get('/downloadExcel', [NilaiController::class, 'downloadExcel'])->name('downloadExcel');
 Route::get('/exportNilaiExcel', [Siswa_dataController::class, 'exportNilaiExcel'])->name('exportNilaiExcel');
+
+// Print Pdf
+Route::get('/printPdf', [Siswa_dataController::class, 'printPdf'])->name('printPdf');

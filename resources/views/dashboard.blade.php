@@ -7,7 +7,7 @@
     </div>
 
     <div class="page-heading">
-        <h3>Penilaian Akhir Statistik</h3>
+        <h3>Data Sekolah Statistik</h3>
     </div>
 
     <div class="row">
@@ -108,4 +108,88 @@
             </div>
         </section>
     </div>
+    <div>
+        <div id="chartNilai" class="mb-5"></div>
+    </div>
+    <div>
+        <div id="chartNilai2"></div>
+    </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+        Highcharts.chart('chartNilai', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Laporan Data Sekolah'
+            },
+            xAxis: {
+                categories: [
+                    'Kelas',
+                    'Guru',
+                    'Siswa',
+                    'Penilaian Selesai',
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Jumlah data'
+                }
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Jumlah Data',
+                data: [
+                    {{ $kelas }},
+                    {{ $gurus }},
+                    {{ $siswas }},
+                    {{ $nilais }},
+                ]
+            }]
+        });
+    </script>
+    <script>
+        // Data retrieved from https://netmarketshare.com
+        Highcharts.chart('chartNilai2', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Laporan Akhir Data Sekolah',
+                align: 'left'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            series: [{
+                name: 'Jumlah data',
+                colorByPoint: true,
+                data: [{
+                    name: 'Kelas',
+                    y: {{ $kelas }},
+                }, {
+                    name: 'Guru',
+                    y: {{ $gurus }}
+                }, {
+                    name: 'Siswa',
+                    y: {{ $siswas }}
+                }, {
+                    name: 'Penilaian Selesai',
+                    y: {{ $nilais }}
+                }]
+            }]
+        });      
+    </script>
 @endsection

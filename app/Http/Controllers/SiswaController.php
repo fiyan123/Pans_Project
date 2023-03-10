@@ -103,7 +103,7 @@ class SiswaController extends Controller
         {
             $siswa = Siswa::findOrFail($id);
 
-            $users  = User::findOrFail($id);
+            $users  = User::findOrFail($siswa->user_siswa);
 
             $siswa->delete();
 

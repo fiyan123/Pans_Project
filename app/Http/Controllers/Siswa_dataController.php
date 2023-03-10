@@ -26,8 +26,6 @@ class Siswa_dataController extends Controller
             $siswa = Siswa::where('user_siswa',auth()->user()->id)->first();
             $nilais = Nilai::where('id_siswa',$siswa->id)->latest()->get();
         }
-        
-        // dd($nilais);
    
         return view('siswa_nilai.index', compact('nilais'));
     }
@@ -42,5 +40,14 @@ class Siswa_dataController extends Controller
     public function exportNilaiExcel()
     {
         return Excel::download(new DataExport, 'Nilai Siswa.xlsx');
+    }
+
+    public function printPdf()
+    {
+        // Mengambil data nilai yang sesuai dengan user yang login
+        $siswa = Siswa::where('user_siswa',auth()->user()->id)->first();
+        $nilais = Nilai::where('id_siswa',$siswa->id)->latest()->get();
+
+        return view('print.siswa_nilai', compact('nilais'));
     }
 }

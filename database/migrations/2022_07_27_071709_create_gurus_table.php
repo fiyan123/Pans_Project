@@ -18,8 +18,11 @@ class CreateGurusTable extends Migration
             $table->bigInteger('nip');
             $table->string('nama');
             $table->string('mata_pelajaran');
+            $table->unsignedBigInteger('user_id');
             $table->enum('jenis_kelamin',['Laki-laki','Perempuan']);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             
         });

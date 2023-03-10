@@ -12,7 +12,7 @@
             <div class="d-flex align-items-end row">
                 <div class="col-sm-7">
                 <div class="card-body">
-                    <h5 class="card-title text-primary- mb-5">Selamat Datang, {{ Auth::user()->name }}</h5>
+                    <h5 class="card-title text-primary- mb-5">Selamat Datang, {{ Auth::user()->name }}!</h5>
                 </div>
                 </div>
                 <div class="col-sm-5 text-center text-sm-left">

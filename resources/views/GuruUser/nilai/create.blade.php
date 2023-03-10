@@ -60,7 +60,7 @@
                         @enderror
                     </div>
 
-                    <div class="row g-2">
+                    <div class="row g-2 mt-4">
                         <div class="col mb-3">
                             <label class="form-label">Nilai Pengetauan</label>
                             <input type="number" class="form-control @error('nilai1') is-invalid @enderror"

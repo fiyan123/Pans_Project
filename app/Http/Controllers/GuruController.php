@@ -47,29 +47,13 @@ class GuruController extends Controller
 
 
         $guru = new Guru();
-
+        
+            $guru['user_id']        = $users->id;
             $guru->nip              = $request->nip;
             $guru->nama             = $request->nama;
             $guru->jenis_kelamin    = $request->jenis_kelamin;
             $guru->mata_pelajaran   = $request->mata_pelajaran;
             $guru->save();
-
-        // Akun Create
-        // User::create([
-
-        //     'name'     => $validated['name'],
-        //     'email'    => $validated['email'],
-        //     'password' => Hash::make($validated['password']),
-        // ]);
-
-        // // Data Create
-        // Guru::create([
-
-        //     'nip'           => $validated['nip'],
-        //     'nama'          => $validated['nama'],
-        //     'jenis_kelamin' => $validated['jenis_kelamin'],
-        //     'mata_pelajaran'=> $validated['mata_pelajaran'],
-        // ]);
 
         return redirect()->route('guru.index')->with('success', 'Data berhasil ditambah!');
     }
@@ -114,7 +98,7 @@ class GuruController extends Controller
     {
         $guru = Guru::findOrFail($id);
 
-        $users = User::findOrFail($id);
+        $users = User::findOrFail($guru->user_id);
         
         $guru->delete();
         

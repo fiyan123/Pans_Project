@@ -22,62 +22,62 @@
 		}
   	</style>
 </head>
-<body class="hold-transition sidebar-mini">
+	<body class="hold-transition sidebar-mini">
 
-<div class="wrapper">
-	<!-- Navbar -->
-		@include('layouts.components.navbar')
+	<div class="wrapper">
+		<!-- Navbar -->
+			@include('layouts.components.navbar')
 
-	<!-- Main Sidebar Container -->
-		@include('layouts.components.sidebar')
+		<!-- Main Sidebar Container -->
+			@include('layouts.components.sidebar')
 
-	<!-- Content Wrapper. Contains page content -->
-	<div class="content-wrapper">
-		<!-- Content Header (Page header) -->
-		<div class="content-header">
-			<div class="container-fluid"></div>
-		</div>
-		<!-- /.content-header -->
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container-fluid"></div>
+			</div>
+			<!-- /.content-header -->
 
-		<!-- Main content -->
-		<div class="content">
-			<div class="container-fluid">
-				<div class="row">
-					@yield('content')
+			<!-- Main content -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						@yield('content')
+					</div>
 				</div>
 			</div>
 		</div>
+		<!-- /.content-wrapper -->
+
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Control sidebar content goes here -->
+		</aside>
+		<!-- /.control-sidebar -->
+
+		<div align="right">
+			<footer class="main-footer">
+				<strong>Copyright &copy; Penilaian Akademik Nilai Siswa.</strong>
+			</footer>
+		</div>
 	</div>
-	<!-- /.content-wrapper -->
 
-	<!-- Control Sidebar -->
-	<aside class="control-sidebar control-sidebar-dark">
-		<!-- Control sidebar content goes here -->
-	</aside>
-	<!-- /.control-sidebar -->
-
-	<div align="right">
-		<footer class="main-footer">
-			<strong>Copyright &copy; Penilaian Akademik Nilai Siswa.</strong>
-		</footer>
-	</div>
-</div>
-
-<!-- jQuery -->
-<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- AdminLTE -->
-<script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
-<!-- OPTIONAL SCRIPTS -->
-<script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('assets/dist/js/pages/dashboard3.js') }}"></script>
-<script>
-	$(document).ready(function() {
-    $('#dataTable').DataTable();
-});
-</script>
-</body>
+	<!-- jQuery -->
+	<script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<!-- AdminLTE -->
+	<script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
+	<!-- OPTIONAL SCRIPTS -->
+	<script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+	<script src="{{ asset('assets/dist/js/pages/dashboard3.js') }}"></script>
+	<script>
+		$(document).ready(function() {
+		$('#dataTable').DataTable();
+	});
+	</script>
+	</body>
 </html>
