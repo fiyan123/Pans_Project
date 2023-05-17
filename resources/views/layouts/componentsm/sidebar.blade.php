@@ -69,12 +69,12 @@
             </li>
 
 
-            {{-- <li class="sidebar-item {{ Request::is('galeri') ? 'active' : '' }}">
+            <li class="sidebar-item {{ Request::is('galeri') ? 'active' : '' }}">
                 <a href="{{ url('/galeri') }}" class="sidebar-link">
                     <dt class="the-icon"><span class="fa-fw select-all fas"></span></dt>
                     <span>Galeri Sekolah</span>
                 </a>
-            </li> --}}
+            </li>
 
             <hr><li class="sidebar-item">  
                     <form id="logOut" action="/logout" method="POST">
@@ -100,6 +100,7 @@
     title: 'Apa Anda Yakin?',
     icon: 'question',
     showCancelButton: true,
+    cancelButtonText: 'Batal',
     confirmButtonColor: '#7066e0',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Keluar'
