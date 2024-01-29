@@ -87,7 +87,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                     </form>
                                 </td>
                             </tr>
@@ -128,14 +128,24 @@
         };
 
         // Button Loading
-        var btnKirim   = document.getElementById('btnKirim');
+        var btnKirim = document.getElementById('btnKirim');
         var btnLoading = document.getElementById('btnLoading');
 
-        btnLoading.style.display = 'none';
+        // Periksa apakah elemen ditemukan sebelum mencoba mengakses properti 'style'
+        if (btnKirim !== null && btnLoading !== null) {
+            btnLoading.style.display = 'none';
 
-        function startProses() {
-            btnKirim.style.display = 'none';
-            btnLoading.style.display = 'block';
+            function startProses() {
+                if (btnKirim !== null && btnLoading !== null) {
+                    btnKirim.style.display = 'none';
+                    btnLoading.style.display = 'block';
+                } else {
+                    console.error("Elemen tidak ditemukan.");
+                }
+            }
+        } else {
+            console.error("Elemen tidak ditemukan.");
         }
+
     </script>
 @endsection

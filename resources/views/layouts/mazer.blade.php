@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="{{ asset('assetsm/css/app.css') }}">
     <link rel="shortcut icon" href="{{ asset('assetsm/images/favicon.svg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('assetsm/vendors/simple-datatables/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assetsm/vendors/apexcharts/apexcharts.css') }}">
-    <link rel="stylesheet" href="{{ asset('assetsm/vendors/fontawesome/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assetsm/css/shared/iconly.css') }}">
-    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+    {{-- <link rel="stylesheet" href="{{ asset('assetsm/vendors/apexcharts/apexcharts.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assetsm/vendors/fontawesome/all.min.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assetsm/css/shared/iconly.css') }}"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" /> --}}
     <style>
         label {
             color: black;
@@ -57,20 +57,20 @@
     <script src="{{ asset('assetsm/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assetsm/js/bootstrap.bundle.min.js') }}"></script>
 
-    <script src="{{ asset('assetsm/vendors/apexcharts/apexcharts.js') }}"></script>
-    <script src="{{ asset('assetsm/js/pages/dashboard.js') }}"></script>
-    <script src="{{ asset('assetsm/js/main.js') }}"></script>
+    {{-- <script src="{{ asset('assetsm/vendors/apexcharts/apexcharts.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assetsm/js/pages/dashboard.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assetsm/js/main.js') }}"></script> --}}
     <script src="{{ asset('assetsm/vendors/simple-datatables/simple-datatables.js') }}"></script>
-    <script src="{{ asset('assetsm/vendors/apexcharts/apexcharts.js') }}"></script>
-    <script src="{{ asset('assetsm/js/pages/ui-apexchart.js') }}"></script>
+    {{-- <script src="{{ asset('assetsm/vendors/apexcharts/apexcharts.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assetsm/js/pages/ui-apexchart.js') }}"></script> --}}
     <script src="{{ asset('assetsm/vendors/fontawesome/all.min.js') }}"></script>
-    <script src="{{ asset('assetsm/extensions/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assetsm/js/pages/dashboard.js') }}"></script>
+    {{-- <script src="{{ asset('assetsm/extensions/apexcharts/apexcharts.min.js') }}"></script> --}}
+    {{-- <script src="{{ asset('assetsm/js/pages/dashboard.js') }}"></script> --}}
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
+    {{-- <script type="text/javascript" src="DataTables/datatables.min.js"></script> --}}
+    {{-- <link rel="stylesheet" href="sweetalert2.min.css"> --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.css"/>
