@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\KelasImport;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class KelasController extends Controller
@@ -37,7 +39,7 @@ class KelasController extends Controller
         $kelas->save();
 
         return redirect()->route('kelas.index')
-            ->with('success', 'Data Kelas '. $kelas->kelas . ' Dibuat!');
+            ->with('success', 'Data Kelas ' . $kelas->kelas . ' Dibuat!');
     }
 
     public function show($id)
@@ -76,12 +78,23 @@ class KelasController extends Controller
 
     public function destroy($id)
     {
-        if(!Kelas::destroy($id)) {
+        if (!Kelas::destroy($id)) {
             return redirect()->back();
         }
 
         return redirect()->route('kelas.index')
             ->with('success', 'Data Berhasil Dihapus!');
     }
-}
 
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('file');
+        $namaFile = $file->getClientOriginalName();
+
+        // Menyimpan File Excel
+        $file->move('DataKelas', $namaFile);
+
+        Excel::import(new KelasImport, public_path('/DataKelas/' . $namaFile));
+        return redirect()->route('kelas.index')->with('success', 'Import File Berhasil!!');
+    }
+}

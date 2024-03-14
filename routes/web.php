@@ -44,7 +44,9 @@ Route::group(['prefix'=>'admin','middleware'=>['admin']], function() {
     Route::resource('guru', GuruController::class);
     Route::resource('siswa', SiswaController::class);
     Route::resource('kelas', KelasController::class);
-    
+
+    Route::post('/importKelas', [KelasController::class, 'importExcel'])->name('ImportKelas');
+
     // Route data dinamis
     Route::get('getsiswa/{id}', [SiswaController::class, 'getNamaSiswa']);
 
